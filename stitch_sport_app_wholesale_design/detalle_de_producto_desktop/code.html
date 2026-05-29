@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es-CO"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#44474e",
+                        "surface": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "primary-container": "#001d3d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "inverse-primary": "#b0c8f0",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-container": "#c3f400",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c4d00",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed-variant": "#30486a",
+                        "primary-fixed-dim": "#b0c8f0",
+                        "on-primary-container": "#6f86ab",
+                        "secondary-fixed": "#c3f400",
+                        "outline-variant": "#c4c6cf",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed": "#d4e3ff",
+                        "secondary": "#506600",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#1e4879",
+                        "tertiary": "#000209",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-container": "#6186bc",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed": "#001c3a",
+                        "on-secondary-fixed": "#161f00",
+                        "surface-tint": "#485f83",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "outline": "#74777f",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#001d3d",
+                        "secondary-fixed-dim": "#abd600",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "on-background": "#191c1d",
+                        "background": "#f8f9fa",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "primary-fixed": "#d5e3ff",
+                        "on-primary-fixed": "#001c3b",
+                        "primary": "#000209",
+                        "on-secondary-container": "#556d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Lexend"],
+                        "label": ["Lexend"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+        h1, h2, h3, .kinetic-text { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopAppBar from JSON -->
+<header class="bg-[#f8f9fa]/80 backdrop-blur-xl dark:bg-[#000209]/80 text-[#000209] dark:text-[#f8f9fa] docked full-width top-0 z-50 fixed flex justify-between items-center w-full px-8 py-4 max-w-[1920px] mx-auto">
+<div class="text-xl font-black text-[#000209] dark:text-[#f8f9fa] tracking-tighter uppercase font-['Space_Grotesk']">
+            KINETIC WAREHOUSE
+        </div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex gap-6">
+<a class="text-[#000209] dark:text-[#c3f400] font-bold border-b-2 border-[#c3f400] transition-colors duration-200" href="#">Inventario</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#c3f400] transition-colors duration-200" href="#">Pedidos</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#c3f400] transition-colors duration-200" href="#">Logística</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-[#c3f400] transition-all scale-95 active:opacity-80">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-[#c3f400] transition-all scale-95 active:opacity-80">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Sidebar Navigation from JSON -->
+<aside class="bg-[#f8f9fa]/80 backdrop-blur-xl dark:bg-[#000209]/80 h-screen w-64 fixed left-0 top-0 pt-20 border-r border-slate-100 dark:border-slate-800 flex flex-col hidden md:flex">
+<div class="px-6 py-4">
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Admin Central</p>
+<p class="text-xs text-slate-500">Sede Bogotá, COL</p>
+</div>
+<nav class="flex-1 mt-4">
+<div class="flex items-center gap-3 bg-[#c3f400]/10 text-[#000209] dark:text-[#c3f400] border-r-4 border-[#c3f400] px-6 py-4 font-bold cursor-pointer hover:translate-x-1 transition-transform duration-200">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Lexend'] text-sm">Inventario</span>
+</div>
+<div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-6 py-4 hover:bg-slate-100 dark:hover:bg-slate-900 cursor-pointer hover:translate-x-1 transition-transform duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-['Lexend'] text-sm">Pedidos</span>
+</div>
+<div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-6 py-4 hover:bg-slate-100 dark:hover:bg-slate-900 cursor-pointer hover:translate-x-1 transition-transform duration-200">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-['Lexend'] text-sm">Logística</span>
+</div>
+<div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-6 py-4 hover:bg-slate-100 dark:hover:bg-slate-900 cursor-pointer hover:translate-x-1 transition-transform duration-200">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Lexend'] text-sm">Reportes</span>
+</div>
+<div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-6 py-4 hover:bg-slate-100 dark:hover:bg-slate-900 cursor-pointer hover:translate-x-1 transition-transform duration-200">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Lexend'] text-sm">Ajustes</span>
+</div>
+</nav>
+<div class="p-6">
+<button class="w-full py-3 bg-primary text-on-primary rounded-lg font-bold text-xs uppercase tracking-tight hover:bg-secondary transition-colors">
+                Abastecer Inventario
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-0 md:ml-64 pt-24 px-8 pb-12">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left: Gallery & Content -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Primary Image -->
+<div class="relative bg-surface-container-low aspect-[4/5] rounded-xl overflow-hidden group">
+<img alt="Kinetic Core Layer 01" class="w-full h-full object-cover" data-alt="Technical navy blue compression sports garment on a minimalist studio background with neon green lighting accents and sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD42h-pejycC0KU6dJOc2laxeMV2R6KkZKMRdMshsONLrCD6gdfnRBiYixZWRQVTE-hX5F92jhL86yclG5H8B6oXBkuPlMPdbmp27V5c3z6FnZwG-2TdZjNrJJfGVUsojUKzBXrRHBzq_MjHYYmd6ugBTP61AleXxgIx-IwDmrEwBgr6AdsZfYToNo0loA7FthmpPYGxxE27cWCVeuqCnyjDOnVIqQqXuaXnX8MeqI__V2W0qg5rsWPTt92IShJRsvJY3QwjLfpPWlt"/>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-xs font-bold rounded-full uppercase tracking-tighter">New Arrival</span>
+<span class="bg-primary-container text-white px-3 py-1 text-xs font-bold rounded-full uppercase tracking-tighter">High Performance</span>
+</div>
+</div>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container-low aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Close-up macro shot of technical aero-dry fabric texture showing the intricate weave in deep navy blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB45iZdjKnYU9LX9sdAeDVdCfj_AwBkiUgyc4Ebsi6JGQ2SxzD1eaS18jgBBGuGu-vNKyfKW2nRy6VraBzRgmIJPyY-EsErGllOCREdkf3tl1SjBXwC0X0jJm7xRjGmSXoW4J5W72ei_v_u2YmoCxC4mu_IbSDpfltNHhVCjMy__rKFBbo3MiGJTbmXaTqqgM9vceIdfag6UY_s6LB3PyBndpAcSklWRWIJa6ZbROU0cvj5TWpok7wQ64oQ13v3jUrz7_rZVrhTwBQu"/>
+</div>
+<div class="bg-surface-container-low aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Technical detail of a neon green zipper and reinforced seam on a navy blue athletic base layer garment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATL4-nFIPni3yh-oNx3RXiPDSDMDwwgmuvqpv2f-0BvLfx5LWN9qoHxkE-A0ReqHqNS4LeaXSK0s6K8i_57-BvbJo6E5cHVfx7XT9ZhOLjR_zHVMAzk4JyZoGee1rnqJ1qwVpDZx-ZWwp4vbENYp7IirvLVzuRyCjd_0iLndRqkAM9nMTowkXs9r71ROBlf40OSxCajr4CCMMSAxi2gQZEuw-DIkkO42Tqp0LO1Owv4exHWt71ojeGXrA9RP1XCFqq1PbiKM7ajzbM"/>
+</div>
+<div class="bg-surface-container-low aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Athletic fit demonstration of a navy blue compression shirt on a muscular male torso in a modern gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnWmpEbmJ79IjlsC6L0WlnWjMOK5ORb7UePOyDeaNLNGNbO9QAfIvrIGQoV1BJ9mMs5LmS_1kegKQckCITNK33matX0h9e1B0I0NX7gFdEWMkt6TKl4pT9qW4qOWHq0wpPlSpYSrG4VrtPQVi2rXasO-CGF_Hru1Lbuu1vs9Zw1eKAJHicSfz10YN2HN22vyW4Iys1AZRDJ49JOxSxEr9610JHhQT-7pMSNrLmlj6e065TtchMqwwfhfUZJjxOuuxo1OS1xEirriC-"/>
+</div>
+</div>
+<!-- Fabric DNA Section - Bento Style -->
+<section class="mt-16">
+<h2 class="text-3xl font-black uppercase tracking-tighter mb-8 border-l-4 border-secondary-container pl-4">Fabric DNA</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(0,29,61,0.04)] border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-4" data-weight="fill">thermostat</span>
+<h3 class="text-xl font-bold mb-2">Thermal Mapping</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Zonas de ventilación estratégicas diseñadas para liberar calor en áreas de alta sudoración, manteniendo el núcleo a temperatura óptima.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(0,29,61,0.04)] border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-4" data-weight="fill">eco</span>
+<h3 class="text-xl font-bold mb-2">Sustainable Impact</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Fabricado con 78% poliéster reciclado de redes de pesca recuperadas, reduciendo la huella de carbono en un 40%.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Product Controls & Pricing -->
+<div class="lg:col-span-5">
+<div class="sticky top-32 space-y-8">
+<div>
+<span class="text-xs font-bold text-on-primary-container tracking-[0.2em] uppercase">Logística de Élite</span>
+<h1 class="text-5xl font-black uppercase tracking-tighter mt-2 mb-4 leading-none">Kinetic Core Layer 01</h1>
+<div class="flex items-center gap-4 text-sm font-medium">
+<span class="text-slate-400">SKU: <span class="text-primary font-bold">KNC-CL01-NVY</span></span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span class="text-secondary font-bold uppercase">En Stock: 1.250 Unidades</span>
+</div>
+</div>
+<!-- Pricing Grid -->
+<div class="bg-primary-container p-8 rounded-xl text-white">
+<h3 class="text-lg font-bold mb-6 text-secondary-container flex items-center gap-2">
+<span class="material-symbols-outlined">grid_view</span>
+                            Tarifas Mayoristas
+                        </h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-white/10">
+<span class="text-sm text-slate-300">50 - 100 Unid.</span>
+<span class="text-lg font-bold">$ 85.000 COP <span class="text-[10px] text-slate-400">/ud</span></span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-white/10">
+<span class="text-sm text-slate-300">101 - 500 Unid.</span>
+<span class="text-lg font-bold">$ 72.500 COP <span class="text-[10px] text-slate-400">/ud</span></span>
+</div>
+<div class="flex justify-between items-center py-3 bg-secondary-container/10 px-4 rounded-lg -mx-4">
+<span class="text-sm font-bold text-secondary-container">501+ Unid. (VIP)</span>
+<span class="text-xl font-black text-secondary-container">$ 59.900 COP <span class="text-[10px] opacity-70">/ud</span></span>
+</div>
+</div>
+</div>
+<!-- Technical Specs -->
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-1 bg-surface-container-high p-4 rounded-lg">
+<p class="text-[10px] uppercase font-bold text-slate-500 mb-1">Tecnología</p>
+<p class="text-sm font-bold">Aero-Dry Tech</p>
+</div>
+<div class="flex-1 bg-surface-container-high p-4 rounded-lg">
+<p class="text-[10px] uppercase font-bold text-slate-500 mb-1">Peso Tela</p>
+<p class="text-sm font-bold">185 GSM</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg">
+<p class="text-[10px] uppercase font-bold text-slate-500 mb-2">Composición Material</p>
+<p class="text-sm leading-relaxed">
+<span class="font-bold text-primary">82% Poliéster Reciclado</span> / 18% Elastano. Tejido entrelazado de alta densidad con estiramiento en 4 direcciones para máxima movilidad.
+                            </p>
+</div>
+</div>
+<!-- CTA -->
+<div class="space-y-4 pt-4">
+<div class="flex gap-4">
+<div class="flex-1 flex items-center border border-outline-variant px-4 rounded-lg">
+<span class="text-xs font-bold mr-auto">CANTIDAD</span>
+<button class="p-2 hover:text-secondary"><span class="material-symbols-outlined">remove</span></button>
+<input class="w-12 text-center bg-transparent border-none focus:ring-0 font-bold text-lg" type="text" value="50"/>
+<button class="p-2 hover:text-secondary"><span class="material-symbols-outlined">add</span></button>
+</div>
+</div>
+<button class="w-full bg-secondary-container hover:bg-secondary text-on-secondary-container py-5 rounded-lg font-black text-lg uppercase tracking-tight shadow-lg shadow-secondary-container/20 transition-all active:scale-[0.98]">
+                            Añadir al Pedido Mayorista
+                        </button>
+<p class="text-[10px] text-center text-slate-400 uppercase font-bold">Estimado de entrega: 3-5 días hábiles en Colombia</p>
+</div>
+<!-- Logistics Info -->
+<div class="grid grid-cols-2 gap-4 mt-8">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400">verified</span>
+<div>
+<p class="text-[10px] font-black uppercase">Garantía Pro</p>
+<p class="text-[9px] text-slate-500 leading-tight">Sustitución inmediata por defectos de fábrica.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400">inventory</span>
+<div>
+<p class="text-[10px] font-black uppercase">Empaque</p>
+<p class="text-[9px] text-slate-500 leading-tight">Biodegradable con etiquetas RFID.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for quick contact (Suppressed as per rules, but included if needed contextually - but rules say suppress on Detail) -->
+</body></html>

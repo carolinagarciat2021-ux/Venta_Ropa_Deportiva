@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configuración del Sistema | Sport-App Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#000209",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#d5e3ff",
+                        "error": "#ba1a1a",
+                        "outline": "#74777f",
+                        "surface-tint": "#485f83",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed-variant": "#30486a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-tertiary-fixed": "#001c3a",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-fixed-variant": "#1e4879",
+                        "surface-container-high": "#e7e8e9",
+                        "primary": "#000209",
+                        "on-primary-fixed": "#001c3b",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-container": "#001d3d",
+                        "secondary-container": "#c3f400",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#001d3d",
+                        "secondary-fixed-dim": "#abd600",
+                        "on-secondary-fixed-variant": "#3c4d00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#556d00",
+                        "on-background": "#191c1d",
+                        "on-surface": "#191c1d",
+                        "on-secondary-fixed": "#161f00",
+                        "on-primary-container": "#6f86ab",
+                        "inverse-primary": "#b0c8f0",
+                        "outline-variant": "#c4c6cf",
+                        "tertiary-fixed": "#d4e3ff",
+                        "on-surface-variant": "#44474e",
+                        "primary-fixed-dim": "#b0c8f0",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9fa",
+                        "secondary-fixed": "#c3f400",
+                        "on-tertiary-container": "#6186bc",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "secondary": "#506600",
+                        "inverse-surface": "#2e3132",
+                        "surface": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Lexend"],
+                        "label": ["Lexend"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex overflow-hidden">
+<!-- SideNavBar Sidebar -->
+<aside class="h-screen w-72 fixed left-0 top-0 bg-[#f8f9fa] dark:bg-[#000209] border-r-[0.5px] border-[#001d3d]/15 flex flex-col h-full py-6 z-50">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="sports_handball">sports_handball</span>
+</div>
+<div>
+<h2 class="text-2xl font-black text-[#000209] dark:text-[#c3f400] leading-none brand-font">Sport-App</h2>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Logística Élite</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-[#c3f400]/5 mx-2 hover:translate-x-1 transition-transform duration-200 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="space_dashboard">space_dashboard</span>
+<span>Panel Principal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-[#c3f400]/5 mx-2 hover:translate-x-1 transition-transform duration-200 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Usuarios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-[#c3f400]/5 mx-2 hover:translate-x-1 transition-transform duration-200 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventario</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-[#c3f400]/5 mx-2 hover:translate-x-1 transition-transform duration-200 font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span>Alertas de Stock</span>
+</a>
+<!-- Active Navigation Tab: Configuración -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#c3f400] text-[#000209] rounded-md font-bold mx-2 active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-600 dark:text-slate-400 hover:translate-x-1 transition-transform duration-200 text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Soporte</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-error hover:translate-x-1 transition-transform duration-200 text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Cerrar Sesión</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-72 overflow-y-auto bg-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-8 py-4 w-full bg-[#f8f9fa]/80 dark:bg-[#000209]/80 backdrop-blur-xl docked full-width top-0 z-40 sticky">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-black tracking-tighter text-[#000209] dark:text-white brand-font">Sport-App Admin</h1>
+<div class="hidden md:flex gap-6 text-sm">
+<span class="text-[#c3f400] font-bold">Ajustes Globales</span>
+<span class="text-slate-500 hover:bg-[#c3f400]/10 transition-colors px-2 cursor-pointer">Seguridad</span>
+<span class="text-slate-500 hover:bg-[#c3f400]/10 transition-colors px-2 cursor-pointer">Logs de Auditoría</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined p-2 text-[#000209] dark:text-[#f8f9fa] hover:bg-[#c3f400]/10 rounded-full transition-colors cursor-pointer" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/20">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Admin Global</p>
+<p class="text-[10px] text-on-surface-variant">Logística Cali</p>
+</div>
+<img alt="Admin Avatar" class="w-10 h-10 rounded-lg object-cover border-2 border-secondary-container" data-alt="Close-up portrait of a professional business administrator in a modern office with soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9XKrcutYCENnZsIQUXVEfKO8kZ7dQUSG6x0SueWDi4BTby4ZxBA0MIVJREfkdtVdQgCHX6CvG1IZNsxFyEwSFX9hWQKRgZGHTDmipLZo_mjK0_6P3GqpkXYlKyskzihvSAzbeQ42aJUV9dW4ZmH7620AdWrocGfWFJWyeQTB4eKT-nTIRp7Y1JNgWGMAhgZ5jdcpI0FkGsl77fFsm3s6cz0TesbYVRg3Y5rJfX3zPyaoSdiYyd2czJ1DVfbz5tQgHBtkrGhR-7ccD"/>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto space-y-10">
+<!-- Page Header -->
+<div class="flex items-baseline justify-between gap-4">
+<div>
+<h2 class="text-4xl font-black text-primary tracking-tighter leading-none mb-2">Configuración del Sistema</h2>
+<p class="text-on-surface-variant">Gestione los parámetros operativos y de seguridad para la distribución nacional.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-6 py-2.5 rounded-lg text-sm font-bold border border-outline-variant hover:bg-surface-container-low transition-colors">Cancelar</button>
+<button class="px-6 py-2.5 rounded-lg text-sm font-bold bg-primary text-white hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-lg shadow-primary/10">Guardar Cambios</button>
+</div>
+</div>
+<!-- Bento Grid Section -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Stock Alerts Configuration -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low rounded-xl p-6 h-full">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="notifications_active">notifications_active</span>
+<h3 class="font-bold text-lg tracking-tight">Alertas de Stock</h3>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase mb-2">Umbral de Alerta Temprana</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-0 rounded-lg px-4 py-3 font-headline font-bold text-xl focus:ring-2 focus:ring-secondary-container" type="number" value="25"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-bold text-on-surface-variant">Unidades</span>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-2 italic">Se notificará cuando el inventario caiga por debajo de este valor.</p>
+</div>
+<div class="space-y-4 pt-4 border-t border-outline-variant/20">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium">Notificar vía Email</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium">Notificaciones Push (Móvil)</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium">Alertas SMS Críticas</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Interface Configuration -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm h-full">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary" data-icon="palette">palette</span>
+<h3 class="font-bold text-lg tracking-tight">Interfaz Global</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<!-- Visual Mode -->
+<div class="space-y-4">
+<h4 class="text-sm font-bold text-on-surface">Modo de Visualización</h4>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-secondary-container bg-surface-container-low transition-all">
+<div class="w-full h-20 bg-white rounded shadow-inner flex flex-col gap-1 p-2">
+<div class="w-1/2 h-2 bg-slate-100"></div>
+<div class="w-full h-4 bg-slate-50"></div>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest">Modo Claro</span>
+</button>
+<button class="flex flex-col items-center gap-3 p-4 rounded-xl border-2 border-transparent hover:border-outline-variant bg-surface-container-low transition-all">
+<div class="w-full h-20 bg-slate-900 rounded shadow-inner flex flex-col gap-1 p-2">
+<div class="w-1/2 h-2 bg-slate-800"></div>
+<div class="w-full h-4 bg-slate-700"></div>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Modo Oscuro</span>
+</button>
+</div>
+</div>
+<!-- Data Density -->
+<div class="space-y-4">
+<h4 class="text-sm font-bold text-on-surface">Densidad de Información</h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors border border-transparent">
+<input checked="" class="text-secondary focus:ring-secondary" name="density" type="radio"/>
+<div>
+<p class="text-sm font-bold">Estándar</p>
+<p class="text-[10px] text-on-surface-variant">Balance óptimo entre espacio y datos.</p>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors border border-transparent">
+<input class="text-secondary focus:ring-secondary" name="density" type="radio"/>
+<div>
+<p class="text-sm font-bold">Compacta</p>
+<p class="text-[10px] text-on-surface-variant">Ideal para pantallas pequeñas o análisis masivo.</p>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors border border-transparent">
+<input class="text-secondary focus:ring-secondary" name="density" type="radio"/>
+<div>
+<p class="text-sm font-bold">Editorial</p>
+<p class="text-[10px] text-on-surface-variant">Espaciado amplio para una lectura descansada.</p>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- User Management Section -->
+<div class="col-span-12">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="manage_accounts">manage_accounts</span>
+<h3 class="font-bold text-lg tracking-tight">Gestión de Usuarios</h3>
+</div>
+<div class="flex gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-white border border-outline-variant/30 rounded-lg text-sm w-64 focus:ring-2 focus:ring-secondary-container" placeholder="Buscar usuario..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+<span>Agregar Usuario</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant bg-surface-container-low/30">
+<th class="px-6 py-4">Usuario</th>
+<th class="px-6 py-4">Rol</th>
+<th class="px-6 py-4">Estado</th>
+<th class="px-6 py-4 text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="User Avatar" class="w-8 h-8 rounded-lg object-cover" data-alt="Modern professional portrait of a tech specialist with soft lighting and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiULDyPywyPTxT5tfV_xi3RhoOSXtdRyAK9_UalVGELWNg7uJ8pHRG2q3rFpe0aLcRo0BAg1PaxDzVhq0EflW7L4d2UszgG-ulWFlK-U7f2Xu4hfhZkZtMKXolwxKV4NKpO6T_g1skpZaNjeTLVWh5vnmMGTvpQ56xywV8RlKT1o9wdrY6fBbGy94CpT1tn69wq5BZRswW2LRmCp1K6caNA2kF9gNb-u2CKp6mpsrvTQ41i4t9ESekLrwJVGTVBDPqxZVFYgXKonML"/>
+<div>
+<p class="text-sm font-bold">Mateo Ramírez</p>
+<p class="text-[10px] text-on-surface-variant">m.ramirez@sportapp.co</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-container text-white">
+                                                Administrador
+                                            </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-secondary font-bold text-xs">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                                                Activo
+                                            </div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-secondary-container/20 rounded-lg text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="delete_outline">delete_outline</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="User Avatar" class="w-8 h-8 rounded-lg object-cover" data-alt="Professional profile photo of a smiling business consultant in an urban setting with golden hour sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3BW0HUsp3Q8QaRDeFf31Qn7la80X82_MRfDZ9NxmOns9ZTf66XmbEdoNmAk7Q92xvNjgX7qbmvh9RZcXTUtVE2NbvNsiR49Vl-QQ39Cs1rrn6RqIkgT-T2Lgb2G5BU026DJOKAcPqP_gTGHzpnTft6ve4ahAP2RHPrV4hdLnOAfFl9ZAIyvtozlfjzvmHsGmQQenJSgMvCSBVlNgHcUV1FvKp15TYCkkVNNdWj24DEk68bRA2Y4_HizmVHeZ9OZXHL0N8la5DvCg-"/>
+<div>
+<p class="text-sm font-bold">Lucía Bernal</p>
+<p class="text-[10px] text-on-surface-variant">l.bernal@fitnesscol.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-high text-on-surface-variant">
+                                                Cliente
+                                            </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-secondary font-bold text-xs">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                                                Activo
+                                            </div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-secondary-container/20 rounded-lg text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="delete_outline">delete_outline</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="User Avatar" class="w-8 h-8 rounded-lg object-cover" data-alt="Editorial portrait of a male professional looking at camera with sophisticated office blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjVM-RGg8O26gLCO4UkJrgJCsjUVxWB9RMJ95BU3sC1OOHNyLyT6IExUPulLSQdq5wZ8uwboBSe0IVEwtAGB9xRtjapmqKgjqDwxf9Y19juNjGkMqHhdXfEKRSY83kGv4vQJ3OAd_w8NJQuLtkJIe9MUKsWh0HsxSm5ZzqDUJVDbrWDjkwsMyb2XccNIFRhnn6LBlPmkaqFQLH6HrVfZgZZharu35qe4kL9jMrEgcjfn8uNdJ8NEqzGOq6e-PrRKaY3ELG72S1nnkQ"/>
+<div>
+<p class="text-sm font-bold">Andrés Giraldo</p>
+<p class="text-[10px] text-on-surface-variant">a.giraldo@logistica.co</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-high text-on-surface-variant">
+                                                Editor
+                                            </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5 text-on-surface-variant/40 font-bold text-xs">
+<span class="w-1.5 h-1.5 bg-on-surface-variant/40 rounded-full"></span>
+                                                Inactivo
+                                            </div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-secondary-container/20 rounded-lg text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="delete_outline">delete_outline</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-surface-container-low/30 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Mostrando 3 de 142 usuarios registrados</span>
+<div class="flex gap-2">
+<button class="p-1 hover:bg-surface-container-high rounded transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-1 hover:bg-surface-container-high rounded transition-colors text-secondary font-black">1</button>
+<button class="p-1 hover:bg-surface-container-high rounded transition-colors">2</button>
+<button class="p-1 hover:bg-surface-container-high rounded transition-colors">3</button>
+<button class="p-1 hover:bg-surface-container-high rounded transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COP Pricing Reference / Help Section -->
+<div class="bg-primary-container rounded-xl p-8 text-white relative overflow-hidden">
+<div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+<div>
+<h4 class="text-2xl font-black mb-4 brand-font">Protocolo de Ajustes Financieros</h4>
+<p class="text-sm opacity-80 mb-6 max-w-md">Todos los valores registrados en el sistema deben incluir el sufijo COP. El tipo de cambio actual está sincronizado con la TRM vigente para exportaciones e importaciones de equipamiento deportivo.</p>
+<div class="flex gap-4">
+<div class="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+<p class="text-[10px] uppercase font-bold tracking-widest opacity-60">Ejemplo de Carga</p>
+<p class="text-xl font-headline font-bold text-secondary-fixed">$ 1.250.000 COP</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+<p class="text-[10px] uppercase font-bold tracking-widest opacity-60">Última TRM</p>
+<p class="text-xl font-headline font-bold text-secondary-fixed">$ 3.940,25 COP</p>
+</div>
+</div>
+</div>
+<div class="hidden md:flex justify-end">
+<span class="material-symbols-outlined text-[120px] opacity-10" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary rounded-full blur-[100px] opacity-20"></div>
+</div>
+</div>
+<footer class="p-8 text-center text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">
+            © 2024 Sport-App Logística Élite — Todos los derechos reservados — Bogotá, Colombia
+        </footer>
+</main>
+</body></html>

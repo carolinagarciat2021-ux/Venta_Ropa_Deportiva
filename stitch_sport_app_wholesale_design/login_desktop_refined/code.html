@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bienvenido a Sport-App | Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Lexend:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#001d3d",
+                      "error-container": "#ffdad6",
+                      "surface": "#f8f9fa",
+                      "inverse-surface": "#2e3132",
+                      "secondary-container": "#c3f400",
+                      "on-surface-variant": "#44474e",
+                      "on-background": "#191c1d",
+                      "tertiary-container": "#001d3d",
+                      "surface-container": "#edeeef",
+                      "on-secondary-fixed": "#161f00",
+                      "primary-fixed": "#d5e3ff",
+                      "error": "#ba1a1a",
+                      "primary": "#000209",
+                      "on-primary-fixed-variant": "#30486a",
+                      "surface-bright": "#f8f9fa",
+                      "on-tertiary-fixed": "#001c3a",
+                      "secondary-fixed-dim": "#abd600",
+                      "inverse-primary": "#b0c8f0",
+                      "on-tertiary-container": "#6186bc",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-highest": "#e1e3e4",
+                      "secondary": "#506600",
+                      "surface-container-high": "#e7e8e9",
+                      "tertiary": "#000209",
+                      "tertiary-fixed": "#d4e3ff",
+                      "surface-tint": "#485f83",
+                      "primary-fixed-dim": "#b0c8f0",
+                      "on-tertiary-fixed-variant": "#1e4879",
+                      "tertiary-fixed-dim": "#a5c8ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-variant": "#e1e3e4",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "background": "#f8f9fa",
+                      "outline": "#74777f",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f3f4f5",
+                      "on-secondary-container": "#556d00",
+                      "on-primary-container": "#6f86ab",
+                      "outline-variant": "#c4c6cf",
+                      "on-primary": "#ffffff",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-secondary-fixed-variant": "#3c4d00",
+                      "secondary-fixed": "#c3f400",
+                      "surface-dim": "#d9dadb",
+                      "on-surface": "#191c1d",
+                      "on-primary-fixed": "#001c3b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Lexend"],
+                      "label": ["Lexend"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #000209 0%, #001d3d 100%);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 15px rgba(195, 244, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation (Shared Component Context) -->
+<nav class="flex justify-between items-center px-12 py-6 w-full max-w-full bg-surface-container-low border-none z-50">
+<div class="text-2xl font-black text-[#000209] uppercase tracking-tighter">
+            Sport-App
+        </div>
+<div class="flex items-center gap-6">
+<span class="font-['Space_Grotesk'] font-bold text-sm tracking-tight text-slate-500 hover:text-[#c3f400] transition-colors duration-300 cursor-pointer">Ayuda</span>
+<span class="font-['Space_Grotesk'] font-bold text-sm tracking-tight text-[#000209] hover:text-[#c3f400] transition-colors duration-300 cursor-pointer">Contáctanos</span>
+</div>
+</nav>
+<main class="flex-grow flex items-stretch">
+<!-- Left Panel: Branding & Kinetic Visuals -->
+<div class="hidden lg:flex w-1/2 kinetic-gradient relative overflow-hidden flex-col justify-between p-16">
+<!-- Background Motif -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img class="w-full h-full object-cover mix-blend-overlay" data-alt="dynamic close-up of high-performance running shoes hitting asphalt with cinematic motion blur and dramatic lighting highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBulHlarza6E2PNhI0GpkiChMZEUOWMS5ryb61GMJnhZMQaUhuXD27nagdzTpp4nS7r2KV2i2bNQ0Lh0G1nrKugfzkaVMW4g2tc53kMUD1zt5noEnhyHRz9VehW10C7ZC7as4WnYbMRIPF0aaqvndfRUDmcc9rzcM9K0PNnR9K1DD---FyoxQ2f6NswGq8OnP1qY3KNdplNKEXSPIL2bIMPwRchGYEtwM8ueSKizxJpE-DYX93vSyVTIuNNw6_fgrUzY_snr4CSjL2X"/>
+</div>
+<div class="relative z-10">
+<div class="inline-block bg-secondary-container text-on-secondary-fixed px-4 py-1 mb-8 font-headline font-bold text-xs uppercase tracking-widest">
+                    Venta al por mayor
+                </div>
+<h1 class="text-7xl font-bold text-white font-headline leading-[0.9] tracking-tighter mb-6">
+                    DOMINA EL <br/> <span class="text-secondary-fixed">MERCADO</span> <br/> DEPORTIVO.
+                </h1>
+<p class="text-on-primary-container text-xl max-w-md font-light leading-relaxed">
+                    Acceso exclusivo para distribuidores mayoristas. Gestiona inventario, pedidos y logística con precisión élite.
+                </p>
+</div>
+<div class="relative z-10 flex items-center gap-12">
+<div class="flex flex-col">
+<span class="text-secondary-fixed font-headline text-4xl font-bold tracking-tighter">150+</span>
+<span class="text-on-primary-container text-xs uppercase tracking-widest font-medium">Marcas Globales</span>
+</div>
+<div class="flex flex-col">
+<span class="text-secondary-fixed font-headline text-4xl font-bold tracking-tighter">24H</span>
+<span class="text-on-primary-container text-xs uppercase tracking-widest font-medium">Despacho Nacional</span>
+</div>
+</div>
+</div>
+<!-- Right Panel: Login Form -->
+<div class="w-full lg:w-1/2 bg-white flex items-center justify-center p-8 lg:p-24">
+<div class="w-full max-w-md">
+<div class="mb-12">
+<h2 class="text-4xl font-bold font-headline text-primary tracking-tight mb-2 uppercase">Bienvenido de nuevo</h2>
+<p class="text-on-surface-variant font-light">Ingresa tus credenciales de mayorista para acceder al panel de control.</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-2 font-headline">ID DE CLIENTE MAYORISTA</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary-container px-4 py-4 font-body text-sm transition-all" placeholder="Ej: WH-98721-COL" type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center text-slate-300">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-2 font-headline">CONTRASEÑA</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary-container px-4 py-4 font-body text-sm transition-all" placeholder="••••••••••••" type="password"/>
+<button class="absolute inset-y-0 right-4 flex items-center text-slate-400 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs font-medium">
+<label class="flex items-center gap-2 cursor-pointer text-slate-600">
+<input class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span>Recordar sesión</span>
+</label>
+<a class="text-primary hover:text-secondary-container transition-colors font-bold uppercase tracking-wider" href="#">¿Olvidaste tu contraseña?</a>
+</div>
+<div class="pt-4 space-y-4">
+<button class="w-full kinetic-gradient text-white py-5 px-6 font-headline font-bold text-sm tracking-widest uppercase hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-3" type="submit">
+                            Iniciar Sesión en el Panel
+                            <span class="material-symbols-outlined text-secondary-fixed" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full border-2 border-slate-100 text-slate-400 py-5 px-6 font-headline font-bold text-sm tracking-widest uppercase hover:border-primary hover:text-primary active:scale-[0.98] transition-all" type="button">
+                            REGISTRARSE
+                        </button>
+</div>
+</form>
+<div class="mt-16 flex items-center gap-4 p-6 bg-surface-container-low rounded-lg">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary font-headline uppercase tracking-tight">Acceso Seguro</p>
+<p class="text-[11px] text-slate-500 font-light leading-tight">Sport-App utiliza cifrado de grado militar para proteger tus transacciones mayoristas.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component Context) -->
+<footer class="flex justify-center gap-8 px-12 py-8 w-full z-10 bg-transparent">
+<span class="text-slate-600 font-['Lexend'] text-xs font-light">© 2024 Sport-App Colombia. Todos los derechos reservados.</span>
+<div class="flex gap-6">
+<a class="text-slate-600 font-['Lexend'] text-xs font-light no-underline hover:text-[#001d3d] transition-all" href="#">Privacidad</a>
+<a class="text-slate-600 font-['Lexend'] text-xs font-light no-underline hover:text-[#001d3d] transition-all" href="#">Términos de Servicio</a>
+<a class="text-slate-600 font-['Lexend'] text-xs font-light no-underline hover:text-[#001d3d] transition-all" href="#">Soporte Técnico</a>
+<a class="text-slate-600 font-['Lexend'] text-xs font-light no-underline hover:text-[#001d3d] transition-all" href="#">Preguntas Frecuentes</a>
+</div>
+</footer>
+</body></html>

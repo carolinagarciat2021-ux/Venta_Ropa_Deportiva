@@ -1,0 +1,1 @@
+SELECT * FROM venta_ropa_deportiva.clientes;

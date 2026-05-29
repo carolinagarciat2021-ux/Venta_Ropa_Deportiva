@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="es-CO"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#001d3d",
+                    "surface": "#f8f9fa",
+                    "on-tertiary-container": "#6186bc",
+                    "surface-container-low": "#f3f4f5",
+                    "on-primary": "#ffffff",
+                    "on-background": "#191c1d",
+                    "on-primary-fixed-variant": "#30486a",
+                    "tertiary": "#000209",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#506600",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#001c3b",
+                    "tertiary-fixed-dim": "#a5c8ff",
+                    "secondary-container": "#c3f400",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-bright": "#f8f9fa",
+                    "surface-tint": "#485f83",
+                    "on-surface": "#191c1d",
+                    "on-secondary-fixed-variant": "#3c4d00",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#44474e",
+                    "inverse-surface": "#2e3132",
+                    "on-secondary-container": "#556d00",
+                    "primary": "#000209",
+                    "primary-fixed": "#d5e3ff",
+                    "secondary-fixed-dim": "#abd600",
+                    "on-tertiary-fixed-variant": "#1e4879",
+                    "on-tertiary-fixed": "#001c3a",
+                    "tertiary-container": "#001d3d",
+                    "surface-dim": "#d9dadb",
+                    "primary-fixed-dim": "#b0c8f0",
+                    "outline-variant": "#c4c6cf",
+                    "tertiary-fixed": "#d4e3ff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-secondary-fixed": "#161f00",
+                    "on-primary-container": "#6f86ab",
+                    "secondary-fixed": "#c3f400",
+                    "background": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container": "#edeeef",
+                    "outline": "#74777f",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#b0c8f0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Lexend"],
+                    "label": ["Lexend"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-md flex justify-between items-center h-16 px-6">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-blue-950 dark:text-white uppercase font-['Space_Grotesk'] tracking-tight">Sport-App Inventory</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-lime-500 transition-colors duration-200" href="#">Panel</a>
+<a class="text-blue-950 dark:text-white font-bold border-b-2 border-lime-400 py-1" href="#">Carrito</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-lime-500 transition-colors duration-200" href="#">Catálogo</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer p-2 rounded-full hover:bg-surface-container-high transition-colors" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer p-2 rounded-full hover:bg-surface-container-high transition-colors" data-icon="help">help</span>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Warehouse Manager Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional male logistics manager with a confident expression in a brightly lit office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHWhT1URkQiELi7YNgLqqHMKV9qkYjEHadntxUL78ehzh_rFgeyyVZ6I1z-5eSF7EyKpSTA8F9oeosV3LYxlLBHkS_pd-brtTn8EvydkTBTM9dIXmV4D_fSXOwzz1-Kg50qmvt8tx5iTCucrNJNJxAk7bZefdNF4WhRKsLtWRx2_LE73MDYCl4tXfwCAQGdFHVDAIE0jmF7BcbjOs3panCcR2yrXKS6w206HsfwaD_-Kfl_C6I8vBnKRydij5iTa4sa3MCQvhTB0Bt"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-md flex flex-col pt-20 pb-6 hidden md:flex">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<p class="font-['Space_Grotesk'] font-black text-blue-950 dark:text-white uppercase leading-tight">Gestión Mayorista</p>
+<p class="text-xs text-slate-500 font-medium">Logística Elite</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Panel de Control</span>
+</a>
+<a class="flex items-center gap-3 text-blue-950 dark:text-lime-400 font-bold border-l-4 border-lime-400 bg-lime-400/10 px-4 py-3 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-medium">Pedidos</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium">Inventario</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-medium">Clientes</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Reportes</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full bg-primary text-white py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                Abastecer Inventario
+            </button>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-slate-200/50 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Configuración</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-20 px-4 md:px-8 pb-12">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+<div>
+<h1 class="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter mb-2">Finalizar Pedido</h1>
+<p class="text-slate-500 font-medium">Revisión de inventario para abastecimiento regional.</p>
+</div>
+<div class="flex items-center gap-2 text-sm font-bold text-primary">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span>ENTREGA ESTIMADA: 48 HORAS</span>
+</div>
+</div>
+<!-- Split Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Items & Details -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Cart Items Section -->
+<section class="bg-surface-container-lowest rounded-xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant/15 flex justify-between items-center">
+<h2 class="font-bold text-lg text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+                                Artículos en el Pedido (2)
+                            </h2>
+<button class="text-primary-fixed-dim hover:text-primary text-sm font-bold flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="delete_sweep">delete_sweep</span>
+                                Vaciar Carrito
+                            </button>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<!-- Item 1 -->
+<div class="p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+<div class="w-24 h-24 bg-surface-container-low rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Apex Nitro V2" class="w-full h-full object-cover" data-alt="sleek professional running shoe in neon green and black on a minimalist grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFQ3pDoG_b2_4he6smta5J7liOHvmnwkh088Ij-jOU5kqK8E3fVpzcI95uCJoyxwXORE91HZarEjCa5x-YepdKRzU6Kxuen1k-3E6y7dLvkDD2mQzO0rl6l-1yNYnMxlzo-K1THiMCxLjLukZ-uDo5djvI_4u2iGw9il9lBzU-hfm-cj35F66s-V8DsvTyYKQKvuYYqML-C06DTlP52NRZbAY23jGBgLLEeBpA7rondefu0I8kc5vo5RTtuuXYE-Jotb9BTk7YxqvG"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<h3 class="font-bold text-xl text-primary uppercase leading-none">Apex Nitro V2</h3>
+<p class="font-bold text-primary">$ 450.000 COP</p>
+</div>
+<p class="text-sm text-slate-500 mb-4 font-medium uppercase tracking-wider">SKU: AN-V2-2024-NEON</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center border border-outline-variant rounded-md overflow-hidden bg-surface-container-low">
+<button class="p-2 hover:bg-outline-variant/20 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span class="px-4 font-bold text-primary">12</span>
+<button class="p-2 hover:bg-outline-variant/20 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-bold text-secondary text-right">Subtotal: $ 5.400.000 COP</p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+<div class="w-24 h-24 bg-surface-container-low rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Grip-Tech Dumbbell Set" class="w-full h-full object-cover" data-alt="set of matte black professional dumbbells in a row with sharp studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAS-wVeGUbDM39MqfZlCGED8n4VgmUp_j8-u0Pc2rDUBQyMfG1krRCcXQ6MXg7pHdqjk53KMKLtqy9sXLgTryfngJlMxK-jOwKOSyGbaLvuc4yqTKmpoj2S4OMy8Vd4ri0HHL_JoEw5yAzZdzRtzyPS1Pz0RRmxTb9T3K-CGfhlwLfNwz4XMVq7CAkB4LzYg-5yoMV0H2gvWfmSrpEZtl9pn3i-0sL1VMy4yyrm3WyKG2K6ZW2LCpVoC61ke3H6NNOJv9jbrsag0-I"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<h3 class="font-bold text-xl text-primary uppercase leading-none">Grip-Tech Dumbbell Set</h3>
+<p class="font-bold text-primary">$ 1.250.000 COP</p>
+</div>
+<p class="text-sm text-slate-500 mb-4 font-medium uppercase tracking-wider">SKU: GT-DB-HEX-50</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center border border-outline-variant rounded-md overflow-hidden bg-surface-container-low">
+<button class="p-2 hover:bg-outline-variant/20 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span class="px-4 font-bold text-primary">5</span>
+<button class="p-2 hover:bg-outline-variant/20 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-bold text-secondary text-right">Subtotal: $ 6.250.000 COP</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Logistics Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="p-2 bg-primary text-white rounded">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<h2 class="text-2xl font-black text-primary uppercase">Logística y Entrega</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-black text-slate-400 uppercase tracking-widest px-1">Bodega de Despacho</label>
+<select class="w-full bg-surface-container-low border-0 rounded-lg p-4 font-medium focus:ring-2 focus:ring-secondary-container text-primary">
+<option>Bodega Principal - Bogotá D.C.</option>
+<option>Centro Logístico - Medellín</option>
+<option>Puerto Hub - Barranquilla</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-black text-slate-400 uppercase tracking-widest px-1">Método de Envío</label>
+<div class="w-full bg-secondary-container/10 border-2 border-secondary-container rounded-lg p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="bolt">bolt</span>
+<span class="font-bold text-on-secondary-container uppercase">Envío Express Mayorista</span>
+</div>
+<span class="font-black text-on-secondary-container">GRATIS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="p-2 bg-primary text-white rounded">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<h2 class="text-2xl font-black text-primary uppercase">Método de Pago</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="border-2 border-primary rounded-xl p-4 cursor-pointer bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="credit_card">credit_card</span>
+<span class="w-4 h-4 rounded-full border-4 border-primary"></span>
+</div>
+<p class="font-bold text-primary uppercase text-sm">Crédito Empresa</p>
+<p class="text-xs text-slate-500">Saldo: $ 45.000.000</p>
+</div>
+<div class="border-2 border-outline-variant rounded-xl p-4 cursor-pointer hover:border-primary transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-slate-400" data-icon="payments">payments</span>
+<span class="w-4 h-4 rounded-full border-2 border-outline-variant"></span>
+</div>
+<p class="font-bold text-slate-600 uppercase text-sm">Transferencia PSE</p>
+<p class="text-xs text-slate-400">Inmediato</p>
+</div>
+<div class="border-2 border-outline-variant rounded-xl p-4 cursor-pointer hover:border-primary transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-slate-400" data-icon="receipt_long">receipt_long</span>
+<span class="w-4 h-4 rounded-full border-2 border-outline-variant"></span>
+</div>
+<p class="font-bold text-slate-600 uppercase text-sm">Factura a 30 días</p>
+<p class="text-xs text-slate-400">Sujeto a aprobación</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary Sidebar -->
+<div class="lg:col-span-4">
+<div class="sticky top-24">
+<div class="bg-primary-container rounded-2xl overflow-hidden shadow-2xl">
+<div class="p-8 text-white">
+<h2 class="text-3xl font-black uppercase tracking-tight mb-8 flex items-center gap-3">
+                                    Resumen <span class="text-secondary-container">Pedido</span>
+</h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center text-on-primary-container">
+<span class="font-medium">Subtotal Bruto</span>
+<span class="font-bold">$ 11.650.000</span>
+</div>
+<div class="flex justify-between items-center text-on-primary-container">
+<span class="font-medium">Logística (Express)</span>
+<span class="font-bold text-secondary-container">GRATIS</span>
+</div>
+<div class="flex justify-between items-center text-on-primary-container">
+<span class="font-medium">IVA Estimado (19%)</span>
+<span class="font-bold">$ 2.213.500</span>
+</div>
+<div class="h-px bg-on-primary-container/20 my-4"></div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-xs font-black text-secondary-container uppercase tracking-widest mb-1">Total a Pagar</p>
+<p class="text-4xl font-black leading-none">$ 13.863.500</p>
+</div>
+<span class="text-xs font-bold text-on-primary-container mb-1">COP</span>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-secondary-container text-on-secondary-container py-5 rounded-lg font-black uppercase tracking-widest text-lg hover:bg-secondary-fixed transition-all active:scale-[0.98] flex items-center justify-center gap-3">
+                                        Confirmar Pedido
+                                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-[10px] text-on-primary-container/60 uppercase font-bold leading-tight">
+                                        Al confirmar, usted acepta los términos de venta mayorista y las políticas de inventario de Sport-App.
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Trust Markers -->
+<div class="mt-6 space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-high/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<div>
+<p class="font-bold text-primary text-sm uppercase">Transacción Asegurada</p>
+<p class="text-xs text-slate-500">Cifrado de nivel bancario para todas sus operaciones de inventario.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-high/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span>
+<div>
+<p class="font-bold text-primary text-sm uppercase">Soporte VIP Mayorista</p>
+<p class="text-xs text-slate-500">Línea directa disponible 24/7 para ajustes de última milla.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

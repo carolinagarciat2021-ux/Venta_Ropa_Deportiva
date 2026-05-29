@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="es-CO"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Lexend:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1, h2, h3, .headline {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#000209",
+                      "primary-container": "#001d3d",
+                      "surface-tint": "#485f83",
+                      "outline-variant": "#c4c6cf",
+                      "outline": "#74777f",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#f0f1f2",
+                      "tertiary-container": "#001d3d",
+                      "surface-container-highest": "#e1e3e4",
+                      "primary-fixed": "#d5e3ff",
+                      "surface-dim": "#d9dadb",
+                      "on-secondary-fixed-variant": "#3c4d00",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#edeeef",
+                      "primary-fixed-dim": "#b0c8f0",
+                      "surface": "#f8f9fa",
+                      "secondary-fixed": "#c3f400",
+                      "inverse-primary": "#b0c8f0",
+                      "on-tertiary-fixed": "#001c3a",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f4f5",
+                      "on-error": "#ffffff",
+                      "secondary": "#506600",
+                      "on-background": "#191c1d",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#1e4879",
+                      "on-tertiary-container": "#6186bc",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary-fixed": "#161f00",
+                      "surface-variant": "#e1e3e4",
+                      "on-surface-variant": "#44474e",
+                      "primary": "#000209",
+                      "on-surface": "#191c1d",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#f8f9fa",
+                      "tertiary-fixed": "#d4e3ff",
+                      "background": "#f8f9fa",
+                      "secondary-container": "#c3f400",
+                      "secondary-fixed-dim": "#abd600",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#30486a",
+                      "on-secondary-container": "#556d00",
+                      "on-primary-fixed": "#001c3b",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#6f86ab",
+                      "tertiary-fixed-dim": "#a5c8ff",
+                      "surface-container-high": "#e7e8e9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Lexend"],
+                      "label": ["Lexend"]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- SideNavBar (Authority: JSON & Design System) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-slate-50/80 backdrop-blur-md h-screen w-64 rounded-none shadow-xl shadow-blue-900/5 font-['Lexend'] text-sm font-medium">
+<div class="p-8">
+<h1 class="font-['Space_Grotesk'] font-black text-blue-950 text-2xl uppercase tracking-tighter">Kinetic</h1>
+<p class="text-[10px] text-slate-500 font-bold tracking-widest uppercase mt-[-4px]">Wholesale Admin</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-slate-200 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span> Ventas
+            </a>
+<!-- Active state: Inventario because we are in the Product Catalog -->
+<a class="flex items-center gap-3 text-blue-950 border-l-4 border-lime-400 bg-lime-400/10 px-4 py-3 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span> Inventario
+            </a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-slate-200 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span> Reportes
+            </a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-slate-200 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span> Usuarios
+            </a>
+</nav>
+<div class="p-6">
+<button class="w-full bg-primary text-white py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+                Abastecer Inventario
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar (Authority: JSON & Design System) -->
+<header class="flex justify-between items-center w-full px-8 py-3 sticky top-0 z-30 bg-slate-50/80 backdrop-blur-md font-['Space_Grotesk'] tracking-tight border-none">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-secondary-container text-sm font-['Lexend']" placeholder="Buscar por referencia, SKU o nombre..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-blue-950 hover:bg-slate-200/50 transition-colors rounded-full relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary-container rounded-full"></span>
+</button>
+<button class="p-2 text-blue-950 hover:bg-slate-200/50 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="flex items-center gap-3 ml-4 pl-4 border-l border-slate-200">
+<div class="text-right">
+<p class="text-xs font-bold text-blue-950">Admin Kinetic</p>
+<p class="text-[10px] text-slate-500">Logística Medellín</p>
+</div>
+<img alt="Avatar del usuario administrador" class="w-10 h-10 rounded-full object-cover ring-2 ring-secondary-container p-0.5" data-alt="portrait of a professional latin man in a workspace environment, soft natural lighting, high quality photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdxLlg7MgFSgJnHohKGuk2gWvcJkQ2tlfDxuRyDJM2ttinN1GGnjY8hwECPxy-b0z4mFHpNfNi52IjIHGfAg5Ax0aK5D0_2ma_ZKEpsmT-mnQm1o7RJ1mjdriKF7qlTRdLL7nAUigtlPYg-J5mFbvUCkd80RifN5PvDsZjdRITxTS4KPypbL4sTEnhs_lVFBHQuKC7iskTlpVnQ2GJUpIPqs4DyZhf9SBSbJwmj_AMijyisBAcGSqAgOV_2afqlg8dRykTNKur9XiR"/>
+</div>
+</div>
+</header>
+<div class="p-8 space-y-8">
+<!-- Hero Banner: Kinetic Bulk Specials -->
+<section class="relative h-64 rounded-xl overflow-hidden bg-primary-container flex items-center p-12">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/80 to-transparent z-10"></div>
+<div class="absolute right-0 top-0 h-full w-1/2 bg-cover bg-center" data-alt="athletic models performing professional gym exercises in high performance sportswear, cinematic lighting, dark industrial gym background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3k0ub8_rweGPjN0rXmkYVQt1TT48DskSl2MhyQZSzYdi2f4yMVUzLPQQnkHfk-hEoYWUOXFelvXPt3HHBK-W3zs4lw2jruxDme0P2LmeOnz2hqAsFoGNesXup9SFJoBwvh1LfSenUSq80ou0OoGkn5xC6buNfRioY5CCNPBlNDg7utTJnOz-h_IARI3gnIb3VWtqmJJOnoDf4N68okCXS2KU85EAP0cm14g5ACYPMw0V_feytcAfabGTuoFGd7NRTIMZCFIXYO4Kf')"></div>
+<div class="relative z-20 max-w-xl space-y-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase tracking-widest rounded-sm">Lanzamiento Temporada</span>
+<h2 class="text-white text-5xl font-black headline tracking-tighter leading-none">PEDIDOS AL POR MAYOR: 25% OFF</h2>
+<p class="text-blue-100 font-light max-w-md">Optimiza tu stock con nuestra nueva colección de alto rendimiento. Aplica para pedidos superiores a $ 10.000.000 COP.</p>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-lg font-bold flex items-center gap-2 hover:scale-95 transition-all">
+                        Ver Colección Elite
+                        <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</button>
+</div>
+</section>
+<!-- Filters and View Controls -->
+<section class="flex flex-wrap items-center justify-between gap-4 bg-surface-container-low p-4 rounded-xl">
+<div class="flex items-center gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-slate-500 uppercase px-1">Categoría</label>
+<select class="bg-surface-container-lowest border-none text-xs font-medium rounded-lg px-3 py-2 ring-1 ring-slate-200">
+<option>Todas las prendas</option>
+<option>Leggings &amp; Tops</option>
+<option>Jerseys Técnicos</option>
+<option>Calzado Pro</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold text-slate-500 uppercase px-1">Tallas</label>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-xs font-bold border border-slate-200 hover:border-secondary transition-colors">S</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-white text-xs font-bold border border-primary">M</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-xs font-bold border border-slate-200 hover:border-secondary transition-colors">L</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-xs font-bold border border-slate-200 hover:border-secondary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium text-slate-600">Mostrando <span class="font-bold text-blue-950">48</span> productos</span>
+<div class="flex gap-1 bg-surface-container-high p-1 rounded-lg">
+<button class="p-1.5 rounded-md bg-white shadow-sm text-blue-950"><span class="material-symbols-outlined text-sm" data-icon="grid_view">grid_view</span></button>
+<button class="p-1.5 rounded-md text-slate-400 hover:text-blue-950"><span class="material-symbols-outlined text-sm" data-icon="list">list</span></button>
+</div>
+</div>
+</section>
+<!-- Product Grid (Asymmetric Layout / 4-5 columns) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+<!-- Product Card 1: Stock Bajo -->
+<article class="bg-surface-container-lowest rounded-xl group transition-all hover:translate-y-[-4px] overflow-hidden flex flex-col">
+<div class="relative h-64 bg-surface-container overflow-hidden">
+<img alt="Leggings de compresión azul" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="high-end blue compression leggings for women, studio photography, minimalist background, crisp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlfqLRJHEWt9w4FY83NsO4oCyzjl5rsmKtjMAB7dhJRuJmJVLbdgBLLFiyyEi6QdT7wOpA4iqJm2Fppluju0WuBLRThcqsGhm87YCtqE99oPotwK1_yUgTnQt4thM9s7ki_TnWx6o7xUwWnpFXOKAeIFXC1vn50Nc4xwqwc2N_5DuvMJ6VZlr_NsWdjX_xiMGTZ-SMeHrldMiLx4fn-W-7llj3mPZN8ANXtsiZnz609kR8qEpoD3qdjrW8gAXb4kCXlSstbwAhNEWv"/>
+<div class="absolute top-3 left-3 bg-error text-white px-2 py-1 rounded text-[10px] font-black uppercase tracking-tighter flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span> Stock Bajo
+                        </div>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Compresión</p>
+<h3 class="font-['Space_Grotesk'] font-bold text-blue-950 leading-tight">Leggings Ultra-Core Pro</h3>
+</div>
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 line-through">$ 120.000</span>
+<span class="text-xl font-black text-blue-950">$ 89.900 COP <span class="text-[10px] font-normal text-slate-400">/u</span></span>
+</div>
+<div class="flex items-center justify-between text-[10px] font-bold">
+<span class="text-error">Disponibles: 8 unidades</span>
+<span class="text-slate-400">REF: KN-2904</span>
+</div>
+</div>
+</article>
+<!-- Product Card 2: Normal Stock -->
+<article class="bg-surface-container-lowest rounded-xl group transition-all hover:translate-y-[-4px] overflow-hidden flex flex-col">
+<div class="relative h-64 bg-surface-container overflow-hidden">
+<img alt="Jersey técnico blanco" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="professional white cycling jersey, athletic fit, technical fabric detail, clean white studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb7X2fjuquG80bAmNKhfO5VRGCN5ya5wt61LvKxw_cf_Y8EeOQRS8uRex8C0cSgBKcPYVKS0LhPn0oQxuFas-8fHhK8MJm7LHS2ncNJc0Eg8s6LRlrqvKIKuur7qgDbWMooWOEx4gWJjxoCDiAlh3PiPaB7cue14919oOE-MKeV0i4w_gTRI_dLxk3Pjhrj47fpaCX-4dAhQlEeXquB6dEYtIxrkO4cd5_Bp2bsgoPozJToXGoNQlFZmvVLdb96donceCegk5mqigA"/>
+<div class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2 py-1 rounded text-[10px] font-black uppercase tracking-tighter">
+                            In Stock
+                        </div>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Cycling</p>
+<h3 class="font-['Space_Grotesk'] font-bold text-blue-950 leading-tight">Jersey Aero-Performance</h3>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black text-blue-950">$ 145.000 COP <span class="text-[10px] font-normal text-slate-400">/u</span></span>
+</div>
+<div class="flex items-center justify-between text-[10px] font-bold">
+<span class="text-secondary">Disponibles: 124 unidades</span>
+<span class="text-slate-400">REF: KN-1122</span>
+</div>
+</div>
+</article>
+<!-- Product Card 3: Sneakers -->
+<article class="bg-surface-container-lowest rounded-xl group transition-all hover:translate-y-[-4px] overflow-hidden flex flex-col">
+<div class="relative h-64 bg-surface-container overflow-hidden">
+<img alt="Tenis running rojos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="red high performance running shoe, side view, energetic lighting, vibrant athletic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDcGFatdSdLlr5jRBTClY3x4e3eXLEdc0HXlrlsQBfyG8ODrFsNkxVgd5XZ7dp6JVAkkrfRgIafEhMBnAcCRX13HfQk9UHXOFwSOrCFv1syBeVaCouABMNLdOGUnvw2jUKSHtcMDsPNPe-owxp6yXezNceyiqzcXF3zt8N0LVNbQ8Kv043zhljSXxhOMFkEckMTon78shxtEKy3AHt4uLNqx3axhjUywazqd2MJFbx8cGbXJf6pwef0oV6vIwoWRCQt-pnOELUiPZ0"/>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Calzado</p>
+<h3 class="font-['Space_Grotesk'] font-bold text-blue-950 leading-tight">Running Kinetic-Volt 3.0</h3>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black text-blue-950">$ 340.000 COP <span class="text-[10px] font-normal text-slate-400">/u</span></span>
+</div>
+<div class="flex items-center justify-between text-[10px] font-bold">
+<span class="text-secondary">Disponibles: 42 unidades</span>
+<span class="text-slate-400">REF: KN-Shoes-09</span>
+</div>
+</div>
+</article>
+<!-- Product Card 4: New Arrival -->
+<article class="bg-surface-container-lowest rounded-xl group transition-all hover:translate-y-[-4px] overflow-hidden flex flex-col">
+<div class="relative h-64 bg-surface-container overflow-hidden">
+<img alt="Conjunto deportivo amarillo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="bright yellow athletic set on model, urban fitness style, high contrast sunlight, energetic mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjuH_zk_rNQGwzThXNPGnYzaYLsZmgeNK3TGOEseqHyoyLjsaEi4gfeaYjcUXDEi6TIRuca1A82z_mb37s81lCcKVJ91ZSU7C-XYuFyA_9tTcLYpqJqebniccVXheKUMj4eEQJYPrSzh-K2Zv9T6ZT7xzwt9LqLKVDKvHaXSRw0GvN1eWj4aQSAOGNfxLrfv7a7X7CZfAnro_hurb7DUK1FEkUJdkiHSlyu28eWhlzvu0roCvu4_W4Z_a4c5VeGlRh8DKio98w6NX-"/>
+<div class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded text-[10px] font-black uppercase tracking-tighter">
+                            Nuevo
+                        </div>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Conjuntos</p>
+<h3 class="font-['Space_Grotesk'] font-bold text-blue-950 leading-tight">Set Training Neon-Flow</h3>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black text-blue-950">$ 198.500 COP <span class="text-[10px] font-normal text-slate-400">/u</span></span>
+</div>
+<div class="flex items-center justify-between text-[10px] font-bold">
+<span class="text-secondary">Disponibles: 250 unidades</span>
+<span class="text-slate-400">REF: KN-SET-88</span>
+</div>
+</div>
+</article>
+<!-- Product Card 5: Stock Bajo -->
+<article class="bg-surface-container-lowest rounded-xl group transition-all hover:translate-y-[-4px] overflow-hidden flex flex-col">
+<div class="relative h-64 bg-surface-container overflow-hidden">
+<img alt="Camiseta técnica negra" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="black tactical fitness shirt, professional athlete model, dark gym environment, moody blue highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5Ost7UzDLT6M74N3fzUlwyUsrjROJZxYjcrX16wRKpqCpSZK5nDEZo9cVzIVzUR0uk28au2rRlfmm2UNhiVZuNBXPkuts3Vq3VF6fvzWLUGgtCSdtqKwjr8quhMUzdPs9DdK1cGLmK7mBBndt8TaJj0ZVzQBTPDrvI-kz-QawSWZ4YpB8S-JCJfs_dbdZt3qg2vMcHI7xQ-REy4tuZixKgjE5jKBayZVQ1P6_3dLmF3xS7kgb4azEkRVOYhvxeE1CVYr8lj1FwYAw"/>
+<div class="absolute top-3 left-3 bg-error text-white px-2 py-1 rounded text-[10px] font-black uppercase tracking-tighter flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span> Stock Bajo
+                        </div>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Basics</p>
+<h3 class="font-['Space_Grotesk'] font-bold text-blue-950 leading-tight">Camiseta Dry-Fit Core</h3>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black text-blue-950">$ 65.000 COP <span class="text-[10px] font-normal text-slate-400">/u</span></span>
+</div>
+<div class="flex items-center justify-between text-[10px] font-bold">
+<span class="text-error">Disponibles: 11 unidades</span>
+<span class="text-slate-400">REF: KN-BS-01</span>
+</div>
+</div>
+</article>
+<!-- Repeat some cards for a full 4-5 column look -->
+<article class="bg-surface-container-lowest rounded-xl group transition-all hover:translate-y-[-4px] overflow-hidden flex flex-col">
+<div class="relative h-64 bg-surface-container overflow-hidden">
+<img alt="Pantaloneta pro" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="dark gray professional workout shorts for men, studio gear setup, clean minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlZR4Exc5SkoTrCcRU97sS-nG6FFnOHM8xv9Dy-y0xQGSj1xfSuViKeRvqjVjcQF7R4ulN2i68eg67yBAaT9cfXM8vRNVijmzuyu-DgTB2UkcCn0pm-fihjfvKbbwIpbRWnW_N9a5JPlZ2goADRnhSXVksbJONhIV62DvmecDfDkQJg3hRcafl1W8nSgOyrozSVju4xpyxT23hotGY4BpNgdpOsObd2TfFiI_NBH2BGEY7qoPK7hi6H1gVHJZf2bGiddRYROtIqytG"/>
+<button class="absolute bottom-3 right-3 w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Shorts</p>
+<h3 class="font-['Space_Grotesk'] font-bold text-blue-950 leading-tight">Shorts Performance Hybrid</h3>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-black text-blue-950">$ 78.900 COP <span class="text-[10px] font-normal text-slate-400">/u</span></span>
+</div>
+<div class="flex items-center justify-between text-[10px] font-bold">
+<span class="text-secondary">Disponibles: 55 unidades</span>
+<span class="text-slate-400">REF: KN-SH-44</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Pagination Control -->
+<footer class="flex items-center justify-center pt-8 border-t border-slate-200">
+<nav class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-slate-400 hover:bg-slate-200">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-low font-bold text-blue-950 hover:bg-slate-200">2</button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-low font-bold text-blue-950 hover:bg-slate-200">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-10 h-10 rounded-lg bg-surface-container-low font-bold text-blue-950 hover:bg-slate-200">12</button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-slate-400 hover:bg-slate-200">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</footer>
+</div>
+</main>
+<!-- FAB for quick bulk action (Task-focused Context) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-secondary-container text-on-secondary-container rounded-2xl shadow-2xl shadow-lime-900/40 flex items-center justify-center group hover:scale-110 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="quick_reference_all">quick_reference_all</span>
+<span class="absolute right-full mr-4 bg-primary text-white text-xs py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-bold">Pedido Rápido (CSV)</span>
+</button>
+</body></html>

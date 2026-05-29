@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil de Socio | Sport-App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed-variant": "#3c4d00",
+                        "tertiary-fixed": "#d4e3ff",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#001d3d",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#001d3d",
+                        "surface-dim": "#d9dadb",
+                        "secondary": "#506600",
+                        "inverse-primary": "#b0c8f0",
+                        "surface-container": "#edeeef",
+                        "on-surface-variant": "#44474e",
+                        "background": "#f8f9fa",
+                        "secondary-container": "#c3f400",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary": "#000209",
+                        "on-secondary-fixed": "#161f00",
+                        "primary-fixed": "#d5e3ff",
+                        "on-tertiary-container": "#6186bc",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#556d00",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#b0c8f0",
+                        "surface-tint": "#485f83",
+                        "outline-variant": "#c4c6cf",
+                        "on-primary-container": "#6f86ab",
+                        "on-primary-fixed": "#001c3b",
+                        "secondary-fixed-dim": "#abd600",
+                        "outline": "#74777f",
+                        "secondary-fixed": "#c3f400",
+                        "on-tertiary-fixed": "#001c3a",
+                        "on-tertiary-fixed-variant": "#1e4879",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#30486a",
+                        "tertiary": "#000209",
+                        "surface": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Lexend"],
+                        "label": ["Lexend"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- Sidebar (As requested from COMPONENTS_27) -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl z-50 flex flex-col pt-20 hidden md:flex">
+<div class="px-6 mb-8">
+<h1 class="font-headline text-lg font-black text-primary uppercase tracking-tighter">Distribuidora Elite</h1>
+<p class="text-xs text-slate-500 font-medium">Venta al por mayor</p>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 text-slate-500 hover:bg-slate-200/50 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Tablero</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:bg-slate-200/50 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-medium">Inventario</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:bg-slate-200/50 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-medium">Pedidos</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:bg-slate-200/50 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-medium">Finanzas</span>
+</a>
+<a class="flex items-center gap-3 text-primary border-l-4 border-secondary-fixed bg-secondary-fixed/10 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Configuración</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<button class="w-full bg-primary text-white py-3 font-bold text-sm tracking-wide hover:bg-secondary-container hover:text-primary transition-colors duration-300">
+                Abastecer Inventario
+            </button>
+</div>
+</aside>
+<!-- Header / TopNavBar -->
+<header class="w-full sticky top-0 z-40 bg-white/80 backdrop-blur-md h-16 flex justify-between items-center px-6 shadow-[0_12px_40px_rgba(0,29,61,0.08)] ml-0 md:ml-0 md:pl-72">
+<div class="flex items-center gap-4">
+<span class="text-xl font-headline font-bold text-primary uppercase">Sport-App</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4 text-sm font-medium">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Catálogo</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Soporte</a>
+<a class="text-primary font-bold border-b-2 border-secondary-fixed" href="#">Perfil</a>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-secondary-fixed/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-secondary-fixed/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-container-high ml-2">
+<img alt="Avatar" data-alt="Close-up portrait of a professional businessman in a warehouse setting with soft industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNVrjkxUctf7JBsId8JSyn62WnT_PmlwSj3BRHLG63ThDDlYJF5JdadwTT5bshb4KioBzZFQl2gjJdwF4WrOVXi79_sdwjcRBK9ZOXjpRi3BV6zQOhWZimgH_MCzEBWGTTk9h6HlHLR2NxRJCuJ-BOr6Y4t4LXupf6U4Nv3YHXaQgsTPZwfXkNmWI-h6QsPZC07AbmaXWs-Y5qoFxLw7VxaIIGcUz774PL5msahGo8nggJGRoX_Nj9p1V9W18QRV3xm0ESGmtTiMLd"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-0 md:ml-64 p-6 lg:p-10 space-y-8 min-h-screen">
+<!-- Profile Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-start gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<h2 class="text-4xl font-headline font-bold tracking-tight text-primary">Marcus Vancity</h2>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full">ACTIVE VIP</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-lg font-headline font-medium text-on-primary-container">Elite Performance Distribution Ltd.</p>
+<p class="text-sm font-label text-slate-400">Partner ID: #SP-99284-MV</p>
+</div>
+</div>
+<!-- KPI Summary Card -->
+<div class="bg-primary-container p-6 w-full md:w-80 shadow-2xl relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-secondary-fixed opacity-10 blur-3xl group-hover:opacity-20 transition-opacity"></div>
+<p class="text-on-primary-container text-xs font-bold uppercase tracking-widest mb-1">Total Spend (YTD)</p>
+<p class="text-3xl font-headline font-bold text-white mb-6">$ 42.850,00 <span class="text-sm font-normal opacity-60">COP</span></p>
+<button class="w-full bg-secondary-fixed text-on-secondary-fixed text-xs font-black py-3 tracking-widest hover:brightness-110 transition-all uppercase">
+                    VIEW CREDIT LINE
+                </button>
+</div>
+</section>
+<!-- Main Bento-ish Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<!-- Recent Orders Section (Col-span 2) -->
+<section class="lg:col-span-2 space-y-6">
+<div class="flex justify-between items-end">
+<h3 class="text-xl font-headline font-bold text-primary border-l-4 border-secondary-fixed pl-4">Recent Orders</h3>
+<a class="text-xs font-bold text-on-primary-container hover:text-primary transition-colors uppercase tracking-widest" href="#">View All Orders</a>
+</div>
+<div class="bg-surface-container-low overflow-hidden">
+<table class="w-full text-left border-separate border-spacing-y-4">
+<thead class="bg-surface-container-high/50 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+<tr>
+<th class="px-6 py-4">Order Entity</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Amount</th>
+<th class="px-6 py-4 text-center">Invoices</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<!-- Order Row 1 -->
+<tr class="bg-white shadow-sm hover:translate-x-1 transition-transform duration-200">
+<td class="px-6 py-5">
+<p class="font-bold text-primary">Q3 Performance Gear Batch</p>
+<p class="text-[10px] text-slate-400">ID: ORD-220934</p>
+</td>
+<td class="px-6 py-5 text-slate-500">Oct 12, 2023</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 text-xs font-bold bg-primary-container text-white">Processing</span>
+</td>
+<td class="px-6 py-5 text-right font-headline font-bold">$ 12.450.000</td>
+<td class="px-6 py-5 text-center">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</td>
+</tr>
+<!-- Order Row 2 -->
+<tr class="bg-white shadow-sm hover:translate-x-1 transition-transform duration-200">
+<td class="px-6 py-5">
+<p class="font-bold text-primary">Winter Collection Pre-order</p>
+<p class="text-[10px] text-slate-400">ID: ORD-220811</p>
+</td>
+<td class="px-6 py-5 text-slate-500">Sep 28, 2023</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 text-xs font-bold bg-secondary-container text-on-secondary-container">Delivered</span>
+</td>
+<td class="px-6 py-5 text-right font-headline font-bold">$ 24.100.000</td>
+<td class="px-6 py-5 text-center">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</td>
+</tr>
+<!-- Order Row 3 -->
+<tr class="bg-white shadow-sm hover:translate-x-1 transition-transform duration-200">
+<td class="px-6 py-5">
+<p class="font-bold text-primary">Footwear Bulk Refresh</p>
+<p class="text-[10px] text-slate-400">ID: ORD-220755</p>
+</td>
+<td class="px-6 py-5 text-slate-500">Sep 15, 2023</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 text-xs font-bold bg-secondary-container text-on-secondary-container">Delivered</span>
+</td>
+<td class="px-6 py-5 text-right font-headline font-bold">$ 6.300.000</td>
+<td class="px-6 py-5 text-center">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Account Details Section -->
+<section class="space-y-6">
+<h3 class="text-xl font-headline font-bold text-primary border-l-4 border-secondary-fixed pl-4">Account Details</h3>
+<div class="bg-white p-8 shadow-[0_12px_40px_rgba(0,29,61,0.08)] space-y-8">
+<div class="group">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Billing Email</p>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="mail">mail</span>
+<p class="text-sm font-medium text-primary break-all">m.vancity@elitegear.com</p>
+</div>
+</div>
+<div class="group">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Primary Warehouse</p>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="warehouse">warehouse</span>
+<div class="text-sm">
+<p class="font-bold text-primary">Distro North, Unit 4B</p>
+<p class="text-slate-500">Vancouver, BC</p>
+</div>
+</div>
+</div>
+<div class="group">
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Sales Rep</p>
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 bg-secondary-fixed/30 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary">Sarah Jenkins</p>
+<p class="text-[10px] font-medium text-on-primary-container">SENIOR ACCOUNT LEAD</p>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-slate-100 flex gap-4">
+<button class="flex-1 border-2 border-primary text-primary py-2 text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                            EDIT PROFILE
+                        </button>
+<button class="p-2 border-2 border-slate-200 text-slate-400 hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-base" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<!-- Promotional/Info Tile -->
+<div class="relative h-40 bg-primary-container overflow-hidden p-6 flex flex-col justify-end">
+<img alt="Training" class="absolute inset-0 object-cover opacity-30 grayscale" data-alt="Dynamic shot of a high-performance athlete in a modern gym with neon lighting accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_omvSTqixXaSIwxeGu3giYXP3JnD-vQE9ZE2ZMJMmf7aHyZG7AhAmc57Y37TxGVHXtYlm8NYXPVFFqJsj61SeXRql17OgbSWoiLCAiq74RkePDOBoSNTapelbdF55QzWsvkKcmJWxANnkeP64MqVgUpcMvEOybu8m_ssy2C5uSguT2VrzoIVxRvdwD5EkGOJYugeGj5-d-7h1BSIZd1ezPu0XzcC4MSM39zDB3hrADiMFfUr9uwBL_rk3JMOyTmjTH-kUMEGzUre5"/>
+<div class="relative z-10">
+<p class="text-secondary-fixed font-headline font-bold text-xl leading-tight">New Winter Drop<br/>Available for VIPs</p>
+<p class="text-white text-[10px] font-bold tracking-widest mt-2 uppercase">24 Hours Early Access</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

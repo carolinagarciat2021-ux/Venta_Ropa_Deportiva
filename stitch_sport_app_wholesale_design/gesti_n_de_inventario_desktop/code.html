@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sport-App | Gestión de Inventario</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#6186bc",
+                      "primary": "#000209",
+                      "on-surface": "#191c1d",
+                      "on-primary-container": "#6f86ab",
+                      "secondary-fixed": "#c3f400",
+                      "tertiary-container": "#001d3d",
+                      "primary-fixed-dim": "#b0c8f0",
+                      "on-error": "#ffffff",
+                      "background": "#f8f9fa",
+                      "on-primary-fixed-variant": "#30486a",
+                      "on-primary-fixed": "#001c3b",
+                      "surface-container-highest": "#e1e3e4",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#3c4d00",
+                      "surface-bright": "#f8f9fa",
+                      "on-surface-variant": "#44474e",
+                      "on-tertiary-fixed": "#001c3a",
+                      "surface-container-low": "#f3f4f5",
+                      "surface-container": "#edeeef",
+                      "on-background": "#191c1d",
+                      "outline-variant": "#c4c6cf",
+                      "surface": "#f8f9fa",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#001d3d",
+                      "surface-variant": "#e1e3e4",
+                      "on-secondary-container": "#556d00",
+                      "surface-container-high": "#e7e8e9",
+                      "surface-dim": "#d9dadb",
+                      "on-secondary-fixed": "#161f00",
+                      "surface-tint": "#485f83",
+                      "inverse-surface": "#2e3132",
+                      "tertiary-fixed": "#d4e3ff",
+                      "secondary-fixed-dim": "#abd600",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#c3f400",
+                      "inverse-on-surface": "#f0f1f2",
+                      "secondary": "#506600",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#a5c8ff",
+                      "on-tertiary-fixed-variant": "#1e4879",
+                      "inverse-primary": "#b0c8f0",
+                      "tertiary": "#000209",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#d5e3ff",
+                      "outline": "#74777f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Lexend"],
+                      "label": ["Lexend"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Space Grotesk', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar (Authority: JSON & Design System) -->
+<aside class="flex flex-col fixed left-0 top-0 h-full py-8 h-screen w-64 border-r border-white/5 bg-blue-950 z-[60] shadow-2xl shadow-blue-950/20">
+<div class="text-2xl font-black text-white px-6 mb-8 headline tracking-widest">
+            Sport-App
+            <div class="text-[10px] font-medium text-lime-400 tracking-normal font-body opacity-80 mt-1 uppercase">Warehouse Admin</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active Item: Inventario (Semantic Mapping) -->
+<a class="flex items-center gap-3 bg-lime-400/10 text-lime-400 border-l-4 border-lime-400 px-6 py-4 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventario</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-6 py-4 hover:bg-white/5 hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Pedidos</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-6 py-4 hover:bg-white/5 hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Proveedores</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-6 py-4 hover:bg-white/5 hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span>Reportes</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-6 py-4 hover:bg-white/5 hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span>Ajustes</span>
+</a>
+</nav>
+<div class="px-4 mt-auto mb-6">
+<button class="w-full bg-secondary-fixed text-on-secondary-fixed py-3 rounded-lg font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+                Abastecer Inventario
+            </button>
+</div>
+<div class="border-t border-white/10 pt-4">
+<a class="flex items-center gap-3 text-slate-400 px-6 py-4 hover:bg-white/5 hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Cerrar Sesión</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Authority: JSON & Design System) -->
+<header class="flex justify-between items-center px-6 w-full sticky top-0 z-50 h-16 bg-slate-50/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-secondary-fixed/50 transition-all outline-none" placeholder="Buscar por referencia, SKU o categoría..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-blue-950 p-2 hover:bg-lime-400/10 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-blue-950 p-2 hover:bg-lime-400/10 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden xl:block">
+<p class="text-xs font-bold text-blue-950 leading-none">Admin Usuario</p>
+<p class="text-[10px] text-on-surface-variant">Director Logístico</p>
+</div>
+<img alt="Usuario Administrador" class="w-9 h-9 rounded-full object-cover border-2 border-secondary-fixed/20" data-alt="portrait of a professional latin man in a business casual outfit with a warm confident expression, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ08GAki13TeI_psXckBZ5ZkksLVZ5jZYlGX4XgcWZQ7PKeuCvsEDQFmQV59_f_W7sluJXDaEoO9fPoiVd67DMQxBPfuEiZi7iedGasdVheYZtlnbIagB-BykjXnTepjdR4c6svnGEQFSU7a1IJQ11fOgGsxHibpCpwSWBwhr2FdyUq3m4G1WsFchUPE8wiCFMHwmH4Q1sXtGrKSWtDJP-fzEYNceWTaKCu9JOCjCgXugHHGksNmYEU9mZSHgdTjjhjqsH-VGOW1Yu"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="p-8 bg-surface flex-1 space-y-8">
+<!-- Page Header -->
+<section class="flex justify-between items-end">
+<div>
+<h1 class="text-4xl font-black text-primary headline tracking-tight">Gestión de Inventario</h1>
+<p class="text-on-surface-variant mt-1">Control de existencias y flujo de mercancía nacional.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-bold text-sm hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="sync">sync</span>
+                    Sincronizar Bodega
+                </button>
+</section>
+<!-- Summary KPI Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- KPI 1: Value -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant mb-2">Valor Total Inventario</span>
+<h2 class="text-3xl font-black headline text-primary">$ 1.458.200.000 COP</h2>
+<div class="flex items-center gap-1 text-secondary mt-3 text-xs font-semibold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+<span>+4.2% este mes</span>
+</div>
+</div>
+</div>
+<!-- KPI 2: References -->
+<div class="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed-dim/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant mb-2">Referencias Totales</span>
+<h2 class="text-3xl font-black headline text-primary">1.284</h2>
+<div class="flex items-center gap-1 text-on-surface-variant mt-3 text-xs font-semibold">
+<span class="material-symbols-outlined text-xs">category</span>
+<span>En 5 bodegas regionales</span>
+</div>
+</div>
+</div>
+<!-- KPI 3: Alert Card -->
+<div class="bg-primary text-white p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined !text-9xl" data-icon="warning">warning</span>
+</div>
+<div class="flex flex-col relative z-10">
+<span class="text-[10px] uppercase font-bold tracking-widest text-secondary-fixed mb-2">Items con Stock Bajo</span>
+<div class="flex items-end gap-3">
+<h2 class="text-4xl font-black headline text-secondary-fixed">12</h2>
+<p class="text-xs mb-1 opacity-80">Requieren reabastecimiento urgente</p>
+</div>
+<button class="mt-4 text-xs font-bold flex items-center gap-1 hover:underline text-secondary-fixed transition-all">
+                            Ver listado crítico
+                            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Data Table Section -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border-t border-outline-variant/10 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Referencia</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Categoría</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Stock Disponible</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Precio Mayorista</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Estado</th>
+<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Row 1 -->
+<tr class="hover:bg-secondary-fixed/5 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container p-1 overflow-hidden">
+<img alt="Calzado Deportivo Rojo" class="w-full h-full object-cover" data-alt="studio shot of a high-performance red running shoe on a minimalist grey background with dynamic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-4BRgDGIUPfXkz8-WgfAIh9HvBl1EI1l5uXuQJMncjW6hX3kqDxdVWcrG_959qEv1DdPM1MsYtFaQ0xLBdWPqDbViILNzROz92uAkgYi2TQI2ajLMidfK9PTJz2SwavR7b-fdERmfmHlwULFAa7npqP1yQSZByscDAVsAvW-mON_AdOZ7GWKWRX62QRkOXvttuwBG2ncW6wy-4Riq7M2ckbjcmhhZwyvlxrhXcqcycPZfBbcEoL_uMFEDvzrqRlTe4x4be-UZuPvp"/>
+</div>
+<div>
+<p class="font-bold text-primary text-sm">Nike AlphaFly Next% 2</p>
+<p class="text-[10px] text-on-surface-variant font-mono">SKU: NK-AF2-402-R</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Calzado</span>
+</td>
+<td class="px-6 py-5">
+<div class="w-32">
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>45 unid.</span>
+<span class="text-on-surface-variant">45%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-[45%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="font-bold text-sm text-primary">$ 1.250.000 COP</p>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 text-secondary font-bold text-[10px] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(195,244,0,0.8)]"></span>
+                                        Normal
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded transition-all active:scale-90">
+<span class="material-symbols-outlined text-lg text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded transition-all active:scale-90">
+<span class="material-symbols-outlined text-lg text-error" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 (Low Stock Example) -->
+<tr class="hover:bg-secondary-fixed/5 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container p-1 overflow-hidden">
+<img alt="Camiseta Sport Elite" class="w-full h-full object-cover" data-alt="front view of a technical sports t-shirt in white with neon accents hanging in a modern clean warehouse setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_MOMcqbsjkiSHWYROwN6iVJI0bzwNLk4Px0EcF4xLPllqMigiZXP4MSLPypBnWQgqzQ3kisz8BRGbY_8UfRIbnNSSEP-DqCm9U-_m-rIc-rGEFMl1ShjgqVZ2O6AK-pIVmlJiCMj9drDWm4KqOUITYVmO4i0ZwZI0pKhptY0Pu7ZGwd8gtLMvZud1m99M2Hu9ZEOteeaqzpNHdojLn7F70jvzvFTAA4p07PMDlZA2316BwN4xEXz-NfH6MHUoETk1NR_nnCwomcud"/>
+</div>
+<div>
+<p class="font-bold text-primary text-sm">Elite Performance Tee</p>
+<p class="text-[10px] text-on-surface-variant font-mono">SKU: EL-TS-009-W</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Textil</span>
+</td>
+<td class="px-6 py-5">
+<div class="w-32">
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span class="text-error">08 unid.</span>
+<span class="text-error">8%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error w-[8%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="font-bold text-sm text-primary">$ 185.000 COP</p>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 text-error font-bold text-[10px] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                        Stock Bajo
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded transition-all active:scale-90">
+<span class="material-symbols-outlined text-lg text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded transition-all active:scale-90">
+<span class="material-symbols-outlined text-lg text-error" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-secondary-fixed/5 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-container p-1 overflow-hidden">
+<img alt="Balón de Fútbol Premium" class="w-full h-full object-cover" data-alt="high quality professional soccer ball on an artificial turf background with bright commercial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1EICfwgIpVSfNNaUn8QWv8-KMNpyVDm8KmTAJ_QoMAB_lTtmQPNPre--m0gkEWRFjf6xTworRy5FlmjbvIv9wvslVXWi5goTCpxP-l8GgIHGyoRhckmq_irj3tbXIM8R_hVNoBX4oyG2QQvy8pMb9BFJc5-4hQ15D5WnNphLRAW8yY8woq5bjG5vtKmvbDrBPCJK79xWydNy4WE0yBV6m-kiN6k9DX_lUtAX3AEzPnxEgPycAXrUHsrJnGh3RruTJ_UD6PJNYnYhU"/>
+</div>
+<div>
+<p class="font-bold text-primary text-sm">Match Ball Pro-X</p>
+<p class="text-[10px] text-on-surface-variant font-mono">SKU: EQ-FB-991-W</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Equipamiento</span>
+</td>
+<td class="px-6 py-5">
+<div class="w-32">
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>210 unid.</span>
+<span class="text-on-surface-variant">82%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-[82%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<p class="font-bold text-sm text-primary">$ 420.000 COP</p>
+</td>
+<td class="px-6 py-5">
+<span class="flex items-center gap-1.5 text-secondary font-bold text-[10px] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(195,244,0,0.8)]"></span>
+                                        Normal
+                                    </span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded transition-all active:scale-90">
+<span class="material-symbols-outlined text-lg text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded transition-all active:scale-90">
+<span class="material-symbols-outlined text-lg text-error" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-6 py-4 flex items-center justify-between bg-surface-container-low/30 border-t border-outline-variant/10">
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">
+                        Mostrando 1-15 de 1.284 referencias
+                    </div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/20 hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/20 hover:bg-surface-container transition-all font-bold text-xs">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/20 hover:bg-surface-container transition-all font-bold text-xs">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant/20 hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Status Cards -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="bg-surface-container p-5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="text-xs font-black uppercase tracking-wider text-on-surface-variant">Entregas Pendientes</p>
+<p class="text-xl font-bold headline">24 Camiones en Ruta</p>
+</div>
+</div>
+<button class="text-xs font-bold bg-white px-4 py-2 rounded-lg shadow-sm active:scale-95 transition-all">Rastrear Flota</button>
+</div>
+<div class="bg-surface-container p-5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</div>
+<div>
+<p class="text-xs font-black uppercase tracking-wider text-on-surface-variant">Último Abastecimiento</p>
+<p class="text-xl font-bold headline">Hoy, 09:15 AM</p>
+</div>
+</div>
+<p class="text-[10px] font-bold text-right text-on-surface-variant max-w-[100px] uppercase">Lote: Bodega Norte #992</p>
+</div>
+</section>
+</div>
+<!-- Global Status Footer -->
+<footer class="mt-auto px-8 py-3 bg-white border-t border-outline-variant/10 text-[9px] font-bold text-on-surface-variant/60 flex justify-between items-center uppercase tracking-widest">
+<div>Sistema Sport-App v2.4.0 • Warehouse Alpha</div>
+<div class="flex gap-4">
+<span>Estado Servidor: <span class="text-secondary">Óptimo</span></span>
+<span>Última Sincronización: 14:02:55</span>
+</div>
+</footer>
+</main>
+</body></html>

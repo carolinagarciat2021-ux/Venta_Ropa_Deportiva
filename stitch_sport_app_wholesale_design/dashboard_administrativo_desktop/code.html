@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#d4e3ff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed": "#d5e3ff",
+                        "on-primary-fixed-variant": "#30486a",
+                        "tertiary-fixed-dim": "#a5c8ff",
+                        "on-tertiary-fixed-variant": "#1e4879",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed": "#c3f400",
+                        "primary-fixed-dim": "#b0c8f0",
+                        "on-error": "#ffffff",
+                        "primary": "#000209",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#c3f400",
+                        "inverse-surface": "#2e3132",
+                        "on-surface-variant": "#44474e",
+                        "primary-container": "#001d3d",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-dim": "#d9dadb",
+                        "secondary": "#506600",
+                        "on-primary-fixed": "#001c3b",
+                        "on-primary-container": "#6f86ab",
+                        "outline": "#74777f",
+                        "on-tertiary-container": "#6186bc",
+                        "on-background": "#191c1d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c4d00",
+                        "surface-tint": "#485f83",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#000209",
+                        "tertiary-container": "#001d3d",
+                        "on-secondary-container": "#556d00",
+                        "secondary-fixed-dim": "#abd600",
+                        "outline-variant": "#c4c6cf",
+                        "on-secondary-fixed": "#161f00",
+                        "surface-container": "#edeeef",
+                        "inverse-primary": "#b0c8f0",
+                        "background": "#f8f9fa",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed": "#001c3a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Lexend"],
+                        "label": ["Lexend"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 h-screen w-64 bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,29,61,0.08)] z-50">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div>
+<h1 class="text-2xl font-black text-blue-950 dark:text-white uppercase tracking-widest leading-none">Sport-App</h1>
+<p class="font-['Lexend'] text-xs font-medium text-slate-500 uppercase tracking-tighter">Logística Premium</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<!-- Active: Ventas (Simulated as dashboard home) -->
+<a class="flex items-center gap-3 bg-lime-400/10 text-blue-950 dark:text-lime-400 border-l-4 border-lime-400 px-4 py-3 rounded-r-lg font-['Lexend'] text-sm font-medium translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Ventas</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:text-blue-950 dark:hover:text-white transition-all duration-300 font-['Lexend'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventario</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:text-blue-950 dark:hover:text-white transition-all duration-300 font-['Lexend'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reportes</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:text-blue-950 dark:hover:text-white transition-all duration-300 font-['Lexend'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Usuarios</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-primary text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-secondary transition-colors mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+<span>Abastecer Inventario</span>
+</button>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:text-error transition-all duration-300 font-['Lexend'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Cerrar Sesión</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center px-8 py-4 w-full bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-900 border-none rounded-full pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-secondary-fixed transition-all" placeholder="Buscar productos, ventas o pedidos..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-800 mx-1"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-sm font-bold text-blue-950 dark:text-white leading-none">Admin Usuario</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Súper Administrador</p>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-secondary-fixed/30 p-0.5">
+<img alt="Admin Profile" class="w-full h-full object-cover rounded-full" data-alt="Professional headshot of a business executive man in a modern office with natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpNjFZWXu3DmDcS8zrLs4GlwobVmYBw8pDPm5kYLVSCoCZWPMZT1G6b7rnRkE94rYMnA-UuZwIKH8FnCWohFEqRmxUdWhtwD9VXLLcQlqspw-mRDZJyk3XN8HPfqEO1lO7bvlSnYAT-XNllL_D7weveFTl_mXBgPQ1wjiLDQWIZrGAHHodRzXDlpEcm5AYB4umwnuMPXoR0XDLfpIgJqDxEhx_E-GwRSkJLR6mP69hY0bHcJfaGTJYT8G4_UlqT278NeP0hl5FanyN"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Dashboard Canvas -->
+<div class="p-8 space-y-8">
+<!-- KPI Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- KPI 1: Valor Total -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-8 border-primary flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-widest">Valor Total del Inventario</span>
+<span class="material-symbols-outlined text-primary/20" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="mt-4">
+<h2 class="headline text-3xl font-black text-blue-950">$ 842.500.000 <span class="text-sm font-normal">COP</span></h2>
+<div class="flex items-center gap-1 mt-2 text-secondary font-bold text-xs">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+<span>+12.4% vs mes anterior</span>
+</div>
+</div>
+</div>
+<!-- KPI 2: Productos Activos -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-8 border-secondary-fixed flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-widest">Productos Activos</span>
+<span class="material-symbols-outlined text-secondary/20" data-icon="inventory">inventory</span>
+</div>
+<div class="mt-4">
+<h2 class="headline text-4xl font-black text-blue-950">1.482</h2>
+<p class="text-xs text-slate-500 mt-2">Distribuidos en 24 bodegas regionales</p>
+</div>
+</div>
+<!-- KPI 3: Alertas de Stock -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-8 border-error flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="text-slate-500 text-xs font-bold uppercase tracking-widest">Alertas de Stock</span>
+<span class="material-symbols-outlined text-error/20" data-icon="warning">warning</span>
+</div>
+<div class="mt-4">
+<div class="flex items-end gap-3">
+<h2 class="headline text-4xl font-black text-error">28</h2>
+<span class="text-xs font-bold text-error bg-error-container px-2 py-0.5 rounded uppercase mb-1">Crítico</span>
+</div>
+<p class="text-xs text-slate-500 mt-2">Requieren reabastecimiento inmediato</p>
+</div>
+</div>
+</section>
+<!-- Charts Section (Asymmetric Bento Grid) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Bar Chart: Ventas del Mes -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h3 class="headline text-xl font-bold text-blue-950">Ventas del Mes</h3>
+<p class="text-slate-500 text-sm">Flujo de facturación mensual (Millones COP)</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-bold bg-slate-100 rounded hover:bg-slate-200 transition-colors">7D</button>
+<button class="px-3 py-1 text-xs font-bold bg-primary text-white rounded">30D</button>
+</div>
+</div>
+<!-- Simulated Bar Chart -->
+<div class="flex items-end justify-between h-64 gap-2">
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-slate-100 rounded-t-sm h-[30%] group-hover:bg-secondary-fixed transition-all"></div>
+<span class="text-[10px] text-slate-400 mt-2 font-bold">LUN</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-slate-100 rounded-t-sm h-[45%] group-hover:bg-secondary-fixed transition-all"></div>
+<span class="text-[10px] text-slate-400 mt-2 font-bold">MAR</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-slate-100 rounded-t-sm h-[85%] group-hover:bg-secondary-fixed transition-all"></div>
+<span class="text-[10px] text-slate-400 mt-2 font-bold">MIÉ</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-secondary-fixed rounded-t-sm h-[100%]"></div>
+<span class="text-[10px] text-blue-950 mt-2 font-black">HOY</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-slate-100 rounded-t-sm h-[60%] group-hover:bg-secondary-fixed transition-all"></div>
+<span class="text-[10px] text-slate-400 mt-2 font-bold">VIE</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-slate-100 rounded-t-sm h-[40%] group-hover:bg-secondary-fixed transition-all"></div>
+<span class="text-[10px] text-slate-400 mt-2 font-bold">SÁB</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-slate-100 rounded-t-sm h-[25%] group-hover:bg-secondary-fixed transition-all"></div>
+<span class="text-[10px] text-slate-400 mt-2 font-bold">DOM</span>
+</div>
+</div>
+</div>
+<!-- Donut Chart: Categorías Top -->
+<div class="bg-primary text-white p-8 rounded-xl flex flex-col">
+<h3 class="headline text-xl font-bold mb-8">Categorías Top</h3>
+<div class="flex-1 flex items-center justify-center relative">
+<!-- Simulated Donut SVG -->
+<svg class="w-48 h-48 -rotate-90">
+<circle cx="96" cy="96" fill="transparent" r="70" stroke="#001d3d" stroke-width="24"></circle>
+<circle cx="96" cy="96" fill="transparent" r="70" stroke="#c3f400" stroke-dasharray="440" stroke-dashoffset="110" stroke-width="24"></circle>
+<circle cx="96" cy="96" fill="transparent" r="70" stroke="#506600" stroke-dasharray="440" stroke-dashoffset="350" stroke-width="24"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-black headline">75%</span>
+<span class="text-[10px] uppercase tracking-widest text-slate-400">Calzado</span>
+</div>
+</div>
+<div class="mt-8 space-y-3">
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span>Calzado Deportivo</span>
+</div>
+<span class="font-bold">45%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Accesorios Training</span>
+</div>
+<span class="font-bold">30%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-900"></span>
+<span>Ropa Técnica</span>
+</div>
+<span class="font-bold">25%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Section -->
+<section class="space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="headline text-2xl font-black text-blue-950">Productos Más Vendidos</h3>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        Ver Inventario Completo <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Nike Air Zoom Kinetic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a vibrant red sports running shoe with sleek design on a clean white background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA-kYmO0MnEYL7kJPQxQuTZonClDVSzy5tmIc0Om6WKkJYJsl7cpG3EK9ZvNr6OBroaTionphOYQrppsN8LJhnGItG_gmKnhDIDC2jS-46MoJ8STM92CSagEVKyL6YVzR5TWolyO7BFrq_ILKPi9Ba0TBHZtm8QiRB1P8gKHIsM3yd7XEzTYmo3e4OXDb8kGYETL61tcIqQbd-2TOiX3-uFsXuBUXvql4XvtTO6-7A84ekYXEUA-AZvmoTxIZRDhdRpiVZKj-b0IjA"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-black px-2 py-1 rounded uppercase">Stock: 142</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Calzado Deportivo</p>
+<h4 class="font-bold text-blue-950 mb-4">Nike Air Zoom Kinetic</h4>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-bold">Precio Mayorista</span>
+<span class="font-black text-primary">$ 420.000 COP</span>
+</div>
+<button class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-primary hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Training Kit Pro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-quality fitness resistance bands and professional training gear in a minimalist gym setting with natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKCkX7bJeS4rJ9qd0eHBobJALgdH5CnLhw4rls-JP49X990Wdlrxeky5uwnScO5Jkxscfku5yXYp4basa66ycHetGUwckblMrMq4-uU_8tw1BGapzw_Jv5t24GmVroqxASF-UJdTGSWf_FAsEhmwubbABf5lDSEbfYjUShiw3t8eDBnLpcZkm6XLONIJBjCKOj4P9jXxUcJUKm8F4upAzpNxJCuCMDFZaHQMADhOZJDt5JJsH91S6zHVVrMFi8DHB6G7b_4NIe3kL"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-black px-2 py-1 rounded uppercase">Stock: 85</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Accesorios Training</p>
+<h4 class="font-bold text-blue-950 mb-4">Training Kit Pro v4</h4>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-bold">Precio Mayorista</span>
+<span class="font-black text-primary">$ 185.000 COP</span>
+</div>
+<button class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-primary hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Camiseta Tech-Fit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Highly detailed fabric texture of a tech-fit moisture-wicking athletic shirt in deep charcoal grey with neon stitching" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwA3vDFtP9uytUyaxXSIPujOsbjkqTa7pmnvdHEVup0eBTWAIt8Zhe4tfkjKu7jOS9XAZgJPzZLJq42Kt59Jo3PlAXVtDbPulu1-ey91sCKpH7SnOGlhh4VCL5WP6xrvQ5021Q9mKIimeZHKhl0AsolQc-MnW2e-8oZPafe3FXHUDPvNwcZoYXdB8RU-xe8H_H0oTsp8BuM3Q0SfI35QIxWx4i6lPiCSWNHdXOGypbqw03ZdPa37ramSkrim5DDTKZbzUoXIQ85KFo"/>
+<div class="absolute top-4 right-4 bg-error-container text-error text-[10px] font-black px-2 py-1 rounded uppercase">Stock: 12</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Ropa Técnica</p>
+<h4 class="font-bold text-blue-950 mb-4">Camiseta Tech-Fit Aero</h4>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-bold">Precio Mayorista</span>
+<span class="font-black text-primary">$ 95.000 COP</span>
+</div>
+<button class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-primary hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Mochila Endurance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Rugged professional athletic backpack with multiple compartments and high-quality materials on a dark concrete floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALgE-sY_5wWVpQyj6N5J9BJjWPuCUn_gNlyWG7zSJov85JGfKSb0XGii9kL56YU-xiNoslKfcIwGjfpyBP_yNM9wpHKtLeFpZQHPS9nzFjhUKBPVQh6e6iLPKyb9xOVsb2-bVFkyYUF6Zjcsh0nsP8rhLWKyuCQpn49mUeHaxmSs9LiTxy6UZMz7WvWkTi37EWaESrujSGy3_MHxN0oNQhuP6WYiX5oxw5CcRA3MzgLA4e3-5v8L3Hi4LLQSXbtVc4Q85poKC5Cr59"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container text-[10px] font-black px-2 py-1 rounded uppercase">Stock: 56</div>
+</div>
+<div class="p-5">
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Accesorios</p>
+<h4 class="font-bold text-blue-950 mb-4">Mochila Endurance 45L</h4>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-bold">Precio Mayorista</span>
+<span class="font-black text-primary">$ 245.000 COP</span>
+</div>
+<button class="w-8 h-8 rounded bg-slate-100 flex items-center justify-center text-primary hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>
