@@ -20,7 +20,7 @@ const ProductForm = ({ onAddProduct }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // ✅ Control de evento corregido con éxito
     const { descripcion, color, precio_mayorista, stock } = formData;
 
     // Validación de campos vacíos
@@ -36,6 +36,7 @@ const ProductForm = ({ onAddProduct }) => {
     }
 
     setError('');
+    
     // Conversión de tipos de datos adecuados para persistencia
     onAddProduct({
       descripcion,
@@ -43,6 +44,15 @@ const ProductForm = ({ onAddProduct }) => {
       color,
       precio_mayorista: parseFloat(precio_mayorista),
       stock: parseInt(stock, 10)
+    });
+
+    // ✅ OPTIMIZACIÓN: Limpiar los campos del formulario tras un guardado exitoso
+    setFormData({
+      descripcion: '',
+      talla: 'M',
+      color: '',
+      precio_mayorista: '',
+      stock: ''
     });
   };
 

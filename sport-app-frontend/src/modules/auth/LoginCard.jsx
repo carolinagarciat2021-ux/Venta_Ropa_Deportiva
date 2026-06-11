@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 /**
  * Componente: LoginCard
- * Encargado de la validación de credenciales del distribuidor o administrador.
+ * Formulario de autenticación seguro unificado tanto para Administradores como para Clientes.
  */
-const LoginCard = ({ onLogin }) => {
+const LoginCard = ({ onLogin, onCancel }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -12,18 +12,20 @@ const LoginCard = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validación básica de campos obligatorios
     if (!email || !password) {
       setError('Por favor, diligencie todos los campos.');
       return;
     }
 
-    // Simulación de validación (Equivalente a tu HU1 de acceso seguro)
+    // --- Control Unificado de Roles ---
     if (email === 'admin@sportapp.com' && password === 'admin123') {
       setError('');
       onLogin({ email: email, role: 'Administrador', name: 'Amelia García' });
+    } else if (email === 'cliente@gmail.com' && password === 'cliente123') {
+      setError('');
+      onLogin({ email: email, role: 'Cliente', name: 'Distribuidor Valle' });
     } else {
-      setError('Credenciales incorrectas. Intente de nuevo.');
+      setError('Credenciales incorrectas. Verifique los datos o regístrese al tramitar un pedido.');
     }
   };
 
@@ -31,7 +33,7 @@ const LoginCard = ({ onLogin }) => {
     <div className="login-wrapper">
       <div className="login-card">
         <h2>Sport-App</h2>
-        <p className="subtitle">The Kinetic Warehouse - Mayoristas</p>
+        <p className="subtitle">Módulo de Ingreso Seguro</p>
         
         {error && <div className="alert-danger">{error}</div>}
         
@@ -42,7 +44,8 @@ const LoginCard = ({ onLogin }) => {
               type="email" 
               value={email} 
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="ejemplo@sportapp.com"
+              placeholder="admin@sportapp.com o cliente@gmail.com"
+              required
             />
           </div>
           
@@ -53,10 +56,14 @@ const LoginCard = ({ onLogin }) => {
               value={password} 
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
+              required
             />
           </div>
           
-          <button type="submit" className="btn-primary">Ingresar Seguro</button>
+          <button type="submit" className="btn-primary" style={{ marginBottom: '10px' }}>Iniciar Sesión</button>
+          <button type="button" onClick={onCancel} className="btn-logout" style={{ color: '#333', borderColor: '#ccc', width: '100%' }}>
+            Volver al Catálogo Público
+          </button>
         </form>
       </div>
     </div>

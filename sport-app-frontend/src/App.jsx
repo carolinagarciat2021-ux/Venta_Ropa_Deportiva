@@ -4,65 +4,92 @@ import LoginCard from './modules/auth/LoginCard';
 import AdminDashboard from './modules/dashboard/AdminDashboard';
 import ProductForm from './modules/products/ProductForm';
 import ProductList from './modules/products/ProductList';
+import CustomerStore from './modules/customer/CustomerStore';
 import './App.css';
 
-/**
- * Componente Principal: App
- * Gestiona el estado de autenticación y la navegación entre módulos
- * de la plataforma mayorista Sport-App.
- */
 function App() {
-  // Estado para controlar el usuario autenticado
   const [user, setUser] = useState(null);
-  // Estado para la vista activa en el Dashboard ("inventario", "crear")
+  const [appMode, setAppMode] = useState('public_store'); // 'public_store', 'login_screen', 'admin_dashboard'
   const [currentView, setCurrentView] = useState('inventario');
-  // Estado local simulado de productos (Sincronizado conceptualmente con MySQL)
+  
   const [products, setProducts] = useState([
-    { id_producto: 1, descripcion: 'Camiseta Dry-Fit', talla: 'M', color: 'Negro', precio_grayorista: 45000, stock: 120 },
-    { id_producto: 2, descripcion: 'Pantaloneta Deportiva', talla: 'L', color: 'Azul', precio_grayorista: 35000, stock: 12 } // Alerta crítica (< 25)
+    { id_producto: 1, descripcion: 'Camiseta Dry-Fit', talla: 'M', color: 'Negro', precio_mayorista: 45000, stock: 120 },
+    { id_producto: 2, descripcion: 'Pantaloneta Deportiva', talla: 'L', color: 'Azul', precio_mayorista: 35000, stock: 12 },
+    { id_producto: 3, descripcion: 'Short Licra Premium', talla: 'S', color: 'Gris', precio_mayorista: 35000, stock: 30 }
   ]);
 
-  // Manejador para el inicio de sesión exitoso
   const handleLogin = (userData) => {
     setUser(userData);
+    if (userData.role === 'Administrador') {
+      setAppMode('admin_dashboard');
+      setCurrentView('inventario');
+    } else {
+      setAppMode('public_store'); // Los clientes vuelven a la vitrina con su sesión abierta
+    }
   };
 
-  // Manejador para el cierre de sesión
   const handleLogout = () => {
     setUser(null);
+    setAppMode('public_store');
   };
 
-  // Manejador para agregar un nuevo producto desde el formulario
+  const handleRegisterSuccess = (newUserData) => {
+    setUser(newUserData);
+  };
+
   const handleAddProduct = (newProduct) => {
-    const productWithId = {
-      ...newProduct,
-      id_producto: products.length + 1
-    };
+    const productWithId = { ...newProduct, id_producto: products.length + 1 };
     setProducts([...products, productWithId]);
-    setCurrentView('inventario'); // Redirecciona a la lista automáticamente
+    setCurrentView('inventario');
   };
 
-  // Renderizado condicional: Si no está logueado, muestra la interfaz de Login
-  if (!user) {
-    return <LoginCard onLogin={handleLogin} />;
+  // --- RENDER CONDICIONAL ---
+
+  if (appMode === 'login_screen') {
+    return <LoginCard onLogin={handleLogin} onCancel={() => setAppMode('public_store')} />;
+  }
+
+  if (appMode === 'admin_dashboard' && user?.role === 'Administrador') {
+    return (
+      <div className="app-container">
+        <Navbar 
+          user={user} 
+          onLogout={handleLogout} 
+          setView={(view) => {
+            if (view === 'tienda_publica') {
+              setAppMode('public_store');
+            } else {
+              setCurrentView(view);
+            }
+          }} 
+        />
+        <main className="main-content">
+          {currentView === 'inventario' ? (
+            <>
+              <AdminDashboard products={products} />
+              <ProductList products={products} />
+            </>
+          ) : (
+            <ProductForm onAddProduct={handleAddProduct} />
+          )}
+        </main>
+      </div>
+    );
   }
 
   return (
-    <div className="app-container">
-      <Navbar user={user} onLogout={handleLogout} setView={setCurrentView} />
-      
-      <main className="main-content">
-        {currentView === 'inventario' ? (
-          <>
-            {/* Panel analítico con la alerta de stock crítico */}
-            <AdminDashboard products={products} />
-            <ProductList products={products} />
-          </>
-        ) : (
-          <ProductForm onAddProduct={handleAddProduct} />
-        )}
-      </main>
-    </div>
+    <CustomerStore 
+      products={products} 
+      user={user} 
+      onToggleLoginScreen={() => {
+        if (user) {
+          handleLogout();
+        } else {
+          setAppMode('login_screen');
+        }
+      }} 
+      onRegisterSuccess={handleRegisterSuccess}
+    />
   );
 }
 

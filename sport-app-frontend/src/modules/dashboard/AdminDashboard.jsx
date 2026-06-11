@@ -7,8 +7,13 @@ import React from 'react';
 const AdminDashboard = ({ products }) => {
   // Filtra los productos que tienen stock inferior a 25 unidades
   const criticalStockItems = products.filter(p => p.stock < 25);
-  // Calcula el valor total de la bodega en pesos colombianos
-  const totalValue = products.reduce((acc, p) => acc + (p.precio_grayorista * p.stock), 0);
+
+  // ✅ CORREGIDO: Se unificó la variable en español (precio * cantidad) para evitar el ReferenceError
+  const totalValue = products.reduce((acc, p) => {
+    const precio = Number(p.precio_mayorista) || 0;
+    const cantidad = Number(p.stock) || 0;
+    return acc + (precio * cantidad); // ¡Ahora sí coincide perfectamente!
+  }, 0);
 
   return (
     <div className="dashboard-summary">
@@ -19,6 +24,7 @@ const AdminDashboard = ({ products }) => {
         </div>
         <div className="metric-card">
           <h4>Valoración de Inventario</h4>
+          {/* Muestra el total con formato limpio de moneda en pesos colombianos */}
           <p className="metric-value">${totalValue.toLocaleString('es-CO')} COP</p>
         </div>
       </div>
