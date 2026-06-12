@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 /**
  * Componente: ProductForm
- * Permite el ingreso de nuevas prendas deportivas aplicando controles de negocio.
+ * Permite el ingreso de nuevas prendas deportivas incluyendo una URL de imagen opcional.
  */
 const ProductForm = ({ onAddProduct }) => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,8 @@ const ProductForm = ({ onAddProduct }) => {
     talla: 'M',
     color: '',
     precio_mayorista: '',
-    stock: ''
+    stock: '',
+    imagen: ''
   });
   const [error, setError] = useState('');
 
@@ -20,12 +21,13 @@ const ProductForm = ({ onAddProduct }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // ✅ Control de evento corregido con éxito
-    const { descripcion, color, precio_mayorista, stock } = formData;
+    e.preventDefault();
+
+    const { descripcion, color, precio_mayorista, stock, imagen } = formData;
 
     // Validación de campos vacíos
     if (!descripcion || !color || !precio_mayorista || !stock) {
-      setError('Todos los campos son obligatorios.');
+      setError('Todos los campos son obligatorios (excepto la imagen).');
       return;
     }
 
@@ -36,29 +38,32 @@ const ProductForm = ({ onAddProduct }) => {
     }
 
     setError('');
-    
+
     // Conversión de tipos de datos adecuados para persistencia
     onAddProduct({
       descripcion,
       talla: formData.talla,
       color,
       precio_mayorista: parseFloat(precio_mayorista),
-      stock: parseInt(stock, 10)
+      stock: parseInt(stock, 10),
+      imagen: imagen.trim() !== '' ? imagen : null
     });
 
-    // ✅ OPTIMIZACIÓN: Limpiar los campos del formulario tras un guardado exitoso
+    // Limpiar los campos del formulario tras un guardado exitoso
     setFormData({
       descripcion: '',
       talla: 'M',
       color: '',
       precio_mayorista: '',
-      stock: ''
+      stock: '',
+      imagen: ''
     });
   };
 
   return (
     <div className="card-form">
       <h3>Registrar Nuevo Producto Mayorista</h3>
+
       {error && <div className="alert-danger">{error}</div>}
       
       <form onSubmit={handleSubmit} className="grid-form">
@@ -90,6 +95,11 @@ const ProductForm = ({ onAddProduct }) => {
         <div className="form-group">
           <label>Stock Inicial:</label>
           <input type="number" name="stock" value={formData.stock} onChange={handleChange} placeholder="0" />
+        </div>
+
+        <div className="form-group">
+          <label>URL de la Imagen del Producto (Opcional):</label>
+          <input type="text" name="imagen" value={formData.imagen} onChange={handleChange} placeholder="https://ejemplo.com/foto.jpg" />
         </div>
 
         <button type="submit" className="btn-success">Guardar en Catálogo</button>

@@ -62,6 +62,31 @@ body {
   color: #1a2a6c;
 }
 
+/* Control Especial de Vistas Dobles para Admin */
+.admin-view-toggle-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.btn-toggle-view {
+  background-color: #ef6c00;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-toggle-view:hover {
+  background-color: #e65100;
+}
+
 /* Contenido */
 .main-content {
   max-width: 1100px;

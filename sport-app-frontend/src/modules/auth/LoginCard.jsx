@@ -17,15 +17,13 @@ const LoginCard = ({ onLogin, onCancel }) => {
       return;
     }
 
-    // --- Control Unificado de Roles ---
-    if (email === 'admin@sportapp.com' && password === 'admin123') {
-      setError('');
-      onLogin({ email: email, role: 'Administrador', name: 'Amelia García' });
-    } else if (email === 'cliente@gmail.com' && password === 'cliente123') {
-      setError('');
-      onLogin({ email: email, role: 'Cliente', name: 'Distribuidor Valle' });
+    // 🚀 CONTROL DINÁMICO: Consume el validador global inyectado por App.jsx
+    const resultado = onLogin(email, password);
+
+    if (resultado.success) {
+      setError(''); 
     } else {
-      setError('Credenciales incorrectas. Verifique los datos o regístrese al tramitar un pedido.');
+      setError(resultado.error); 
     }
   };
 
@@ -34,7 +32,7 @@ const LoginCard = ({ onLogin, onCancel }) => {
       <div className="login-card">
         <h2>Sport-App</h2>
         <p className="subtitle">Módulo de Ingreso Seguro</p>
-        
+
         {error && <div className="alert-danger">{error}</div>}
         
         <form onSubmit={handleSubmit}>
